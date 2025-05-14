@@ -1,5 +1,6 @@
 node_modules/
 .env
+**/.env
 *.pyc
 __pycache__/
 *.sqlite3
@@ -9,4 +10,3 @@ backend/venv/
 frontend/dist/
 frontend/.angular/
 frontend/.sass-cache/
-
