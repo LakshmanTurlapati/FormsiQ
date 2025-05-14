@@ -1,0 +1,65 @@
+.file-upload {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.02);
+  border-radius: var(--border-radius);
+  border: 1px dashed var(--light-gray);
+}
+
+.file-upload label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.selected-file {
+  margin-top: 0.75rem;
+  padding: 0.5rem;
+  background-color: rgba(63, 81, 181, 0.1);
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.small-btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.model-selection {
+  margin-bottom: 20px;
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 200px;
+    cursor: pointer;
+    
+    &:focus {
+      outline: none;
+      border-color: #6f42c1;
+      box-shadow: 0 0 0 2px rgba(111, 66, 193, 0.25);
+    }
+    
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.6;
+      background-color: #f9f9f9;
+    }
+  }
+}

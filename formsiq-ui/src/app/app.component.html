@@ -1,0 +1,23 @@
+<div class="app-container">
+  <header>
+    <h1>FormsIQ</h1>
+    <p>Automated Mortgage Application Form Extraction</p>
+  </header>
+  
+  <main>
+    <div class="content">
+      <app-transcript-input
+        (extractionComplete)="onExtractionComplete($event)"
+      ></app-transcript-input>
+      
+      <app-results-display
+        [extractedData]="extractedData"
+        *ngIf="extractedData"
+      ></app-results-display>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 FormsIQ - Call Transcript to Mortgage Form Extractor  <br>  By<strong> Venkat L. Turlpati</strong></p>
+  </footer>
+</div>

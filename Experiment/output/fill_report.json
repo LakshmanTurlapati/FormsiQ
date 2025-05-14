@@ -1,0 +1,156 @@
+{
+  "filled_fields": [
+    {
+      "variable": "Borrower First Name",
+      "pdf_field": "Combined Monthly Housing Expense First M 1",
+      "value": "Brenda",
+      "confidence": 100.0,
+      "page": 1
+    },
+    {
+      "variable": "Borrower Middle Name",
+      "pdf_field": "Title will be held in what names",
+      "value": "Carol",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Borrower Last Name",
+      "pdf_field": "Title will be held in what names",
+      "value": "Parker",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Social Security Number",
+      "pdf_field": "Borrower SSN",
+      "value": "987656789",
+      "confidence": 80.0,
+      "page": 0
+    },
+    {
+      "variable": "Date of Birth",
+      "pdf_field": "Borrower DOB",
+      "value": "06/15/1988",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Current Street Address",
+      "pdf_field": "Subject Property Address",
+      "value": "123 Elm Street, Apartment 4B",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Current State",
+      "pdf_field": "Estate will be held in",
+      "value": "TX",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Primary Phone Number",
+      "pdf_field": "Phone",
+      "value": "214-555-1212",
+      "confidence": 100.0,
+      "page": 3
+    },
+    {
+      "variable": "Email Address",
+      "pdf_field": "Mail",
+      "value": "brenda.c.parker@exampleemail.com",
+      "confidence": 100.0,
+      "page": 3
+    },
+    {
+      "variable": "Marital Status",
+      "pdf_field": "Borrower Marital Status",
+      "value": "Unmarried",
+      "confidence": 95.0,
+      "page": 0
+    },
+    {
+      "variable": "Current Employer Name",
+      "pdf_field": "Title will be held in what names",
+      "value": "Innovatech Solutions LLC",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Job Title/Position",
+      "pdf_field": "Title will be held in what names",
+      "value": "Senior Software Engineer",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Monthly Income (Base)",
+      "pdf_field": "Borrower Employment info Cont monthly income of Employ",
+      "value": "9500",
+      "confidence": 100.0,
+      "page": 1
+    },
+    {
+      "variable": "Monthly Income (Other, specify source if possible)",
+      "pdf_field": "Borrower Employment info Cont monthly income of Employ",
+      "value": "10",
+      "confidence": 80.0,
+      "page": 1
+    },
+    {
+      "variable": "Loan Amount Requested",
+      "pdf_field": "Amount",
+      "value": "$280,000",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Loan Purpose",
+      "pdf_field": "Mortgage Applied For",
+      "value": "Purchase",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Property Street Address (if different from current, or for purchase)",
+      "pdf_field": "Subject Property Address",
+      "value": "456 Oak Lane",
+      "confidence": 100.0,
+      "page": 0
+    },
+    {
+      "variable": "Property State (if different from current, or for purchase)",
+      "pdf_field": "Estate will be held in",
+      "value": "TX",
+      "confidence": 100.0,
+      "page": 0
+    }
+  ],
+  "unmapped_variables": [
+    {
+      "variable": "Current City",
+      "value": "Pleasantville",
+      "confidence": 100.0
+    },
+    {
+      "variable": "Current Zip Code",
+      "value": "75002",
+      "confidence": 100.0
+    },
+    {
+      "variable": "Property City (if different from current, or for purchase)",
+      "value": "Pleasantville",
+      "confidence": 100.0
+    },
+    {
+      "variable": "Property Zip Code (if different from current, or for purchase)",
+      "value": "75002",
+      "confidence": 100.0
+    }
+  ],
+  "total_variables": 24,
+  "matched_variables": 18,
+  "unmatched_variables": 4,
+  "confidence_threshold": 80
+}

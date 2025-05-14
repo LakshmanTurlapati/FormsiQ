@@ -1,0 +1,18 @@
+{
+  "name": "Mr. Cooper",
+  "short_name": "Mr. Cooper",
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.mrcooper.apollo.beta"
+    },
+    {
+      "platform": "play",
+      "id": "com.mrcooper.apollo.uat"
+    },
+    {
+      "platform": "play",
+      "id": "com.mrcooper.apollo.qa"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+Fake Call Transcript: "Brenda Parker - New Mortgage Application"
+
+Characters:
+
+Agent (Sarah): Mortgage Loan Officer
+Applicant (Brenda): Potential Borrower
+(Call Start)
+
+Agent (Sarah): "Good morning! Thank you for calling SecureHome Mortgages. My name is Sarah. How can I help you today?"
+
+Applicant (Brenda): "Hi Sarah, my name is Brenda Carol Parker. I'm calling because I'm interested in getting pre-approved for a home loan. My friend, Tom Jenkins, actually recommended you folks."
+
+Agent (Sarah): "That's great to hear, Brenda! We're happy to help. To start, could I get your date of birth and the last four digits of your social security number, just for initial setup?"
+
+Applicant (Brenda): "Sure. My date of birth is June 15th, 1988. And the last four of my social... let me see... it's 6789. Oh, and my full social, if you need it later, is 987-65-6789."
+
+Agent (Sarah): "Perfect, thank you. And is there a co-borrower, or will this application be just for you?"
+
+Applicant (Brenda): "Just me for now. I'm unmarried, though I was previously divorced, if that matters."
+
+Agent (Sarah): "Noted. And do you have any dependents?"
+
+Applicant (Brenda): "Yes, I have one child, my son Leo. He's 8 years old."
+
+Agent (Sarah): "Okay. Let's talk about the property you're considering. Do you have a specific address in mind, or are you still looking?"
+
+Applicant (Brenda): "I'm very interested in a townhouse I saw. It's at 456 Oak Lane, in Pleasantville, Texas. The zip code there is, uh, 75002. It's a nice two-unit property, but I'd be occupying one as my primary residence."
+
+Agent (Sarah): "Sounds good. And what's the estimated purchase price you're looking at for this property?"
+
+Applicant (Brenda): "They're asking around $320,000. I was hoping to get a loan for about $280,000, maybe with a 30-year fixed rate? I’m trying to keep the interest rate reasonable, of course."
+
+Agent (Sarah): "Understood, a 30-year fixed is very common. We'll look at the best conventional options for you. What is your current living situation? Do you own or rent?"
+
+Applicant (Brenda): "I'm currently renting an apartment at 123 Elm Street, Apartment 4B, also in Pleasantville, same zip, 75002. I've been here for about three and a half years."
+
+Agent (Sarah): "Great. And could I get your best contact phone number and email address?"
+
+Applicant (Brenda): "My cell is 214-555-1212. And my email is brenda.c.parker@exampleemail.com."
+
+Agent (Sarah): "Excellent. Now, let's discuss your employment. Who is your current employer?"
+
+Applicant (Brenda): "I work for Innovatech Solutions LLC. Their main office is at 789 Tech Drive, Richardson, Texas, 75080."
+
+Agent (Sarah): "And what's your position or title there, and how long have you been with them?"
+
+Applicant (Brenda): "I'm a Senior Software Engineer. I've been with Innovatech for just over five years now. Actually, it’ll be five years and two months next week. Before that, I was a software developer at a smaller company, 'Code Crafters Inc.' for about three years."
+
+Agent (Sarah): "Okay, Senior Software Engineer at Innovatech. And what would you say is your gross monthly income from your base salary?"
+
+Applicant (Brenda): "My base salary comes out to about $9,500 per month before taxes. I sometimes get a small annual bonus, usually around $5,000, but it's not guaranteed, so I don't really count on it for monthly budgeting."
+
+Agent (Sarah): "Alright, $9,500 monthly base. Do you have any other sources of income? Like rental income, dividends, or interest?"
+
+Applicant (Brenda): "Not really. I have a small savings account that earns a tiny bit of interest, maybe like $10 a month, nothing significant."
+
+Agent (Sarah): "Okay. Now, regarding your assets, roughly how much do you have in checking and savings accounts? For instance, where will the down payment and closing costs be coming from?"
+
+Applicant (Brenda): "I have about $50,000 in my savings account at Big Texas Bank, account number ending in 1122. And my checking, also at Big Texas Bank, usually has a few thousand, say $3,500 right now, account ending in 3344. The down payment will come primarily from my savings."
+
+Agent (Sarah): "Good. Do you own any other real estate, stocks, bonds, or have retirement accounts like a 401k?"
+
+Applicant (Brenda): "I have a 401k through Innovatech, it's managed by FutureInvest Group. I think it has about $75,000 in it. No other real estate or major stocks."
+
+Agent (Sarah): "Okay. And any significant liabilities? Car loans, student loans, credit card debt?"
+
+Applicant (Brenda): "I have a car loan with Capital Auto Finance. The original amount was $25,000. The monthly payment is $450, and I think there are about 24 months left. The account number is CAF-98765. I also have one credit card with Global Visa, account ending 5001, with a balance of about $1,500 right now. I usually pay it off each month though. No student loans, thankfully!"
+
+Agent (Sarah): "That all sounds quite clear. Just a few declaration questions now, Brenda. Are there any outstanding judgments against you?"
+
+Applicant (Brenda): "No, none."
+
+Agent (Sarah): "Have you been declared bankrupt within the past 7 years?"
+
+Applicant (Brenda): "No, never."
+
+Agent (Sarah): "Have you had property foreclosed upon or given title or deed in lieu thereof in the last 7 years?"
+
+Applicant (Brenda): "No."
+
+Agent (Sarah): "Are you a party to any lawsuit?"
+
+Applicant (Brenda): "No, I am not."
+
+Agent (Sarah): "Have you ever been obligated on any loan which resulted in foreclosure, transfer of title in lieu of foreclosure, or judgment?"
+
+Applicant (Brenda): "No."
+
+Agent (Sarah): "Are you presently delinquent or in default on any Federal debt or any other loan or financial obligation?"
+
+Applicant (Brenda): "No, everything's current."
+
+Agent (Sarah): "Are you obligated to pay alimony, child support, or separate maintenance?"
+
+Applicant (Brenda): "No, I am not."
+
+Agent (Sarah): "Is any part of the down payment borrowed?"
+
+Applicant (Brenda): "No, it's all from my savings."
+
+Agent (Sarah): "Are you a co-maker or endorser on a note for someone else?"
+
+Applicant (Brenda): "No."
+
+Agent (Sarah): "Are you a U.S. citizen?"
+
+Applicant (Brenda): "Yes, I am."
+
+Agent (Sarah): "And just to confirm, you intend to occupy this property at 456 Oak Lane as your primary residence?"
+
+Applicant (Brenda): "Yes, absolutely."
+
+Agent (Sarah): "Have you had an ownership interest in a property in the last three years? And if so, what type was it and how did you hold the title?"
+
+Applicant (Brenda): "No, I haven't owned property before. This would be my first home."
+
+Agent (Sarah): "Okay, Brenda. This gives me a very good starting point. The next step would be for me to run these numbers and get you that pre-approval. I'll also send you a link to our secure portal where you can formally submit an application and upload documents like pay stubs and bank statements. Do you have any questions for me at this stage?"
+
+Applicant (Brenda): "No, I think that covers it for now. How long does the pre-approval process usually take?"
+
+Agent (Sarah): "Typically, once I have everything, I can get back to you within 24 to 48 hours. Given our conversation, I'll start working on this right away."
+
+Applicant (Brenda): "That sounds great, Sarah. Thank you so much for your help!"
+
+Agent (Sarah): "You're very welcome, Brenda! I'll be in touch soon. Have a wonderful day."
+
+Applicant (Brenda): "You too. Bye!"
+
+(Call End)

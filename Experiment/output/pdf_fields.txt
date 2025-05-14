@@ -1,0 +1,1938 @@
+Field Name: Mortgage Applied For
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [145.69, 158.62, 155.44, 169.12]
+--------------------------------------------------
+Field Name: Agency Case Number
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [418.5, 50.5, 593.0, 72.0]
+--------------------------------------------------
+Field Name: Lender Case Number
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [419.5, 83.5, 593.5, 97.5]
+--------------------------------------------------
+Field Name: Amount
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [27.6, 186.65, 119.4, 200.15]
+--------------------------------------------------
+Field Name: Interest Rate
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [128.5, 187.45, 186.7, 200.95]
+--------------------------------------------------
+Field Name: No. of Months
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [204.3, 188.05, 260.1, 201.55]
+--------------------------------------------------
+Field Name: Amortization Type
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [404.0, 189.88, 414.0, 199.38]
+--------------------------------------------------
+Field Name: Subject Property Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [20.3, 221.45, 533.3, 234.95]
+--------------------------------------------------
+Field Name: No. of Units
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [541.5, 221.85, 593.7, 235.35]
+--------------------------------------------------
+Field Name: Subject Property Description
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [20.1, 247.85, 533.1, 261.35]
+--------------------------------------------------
+Field Name: Year Built
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [542.25, 245.65, 594.45, 259.15]
+--------------------------------------------------
+Field Name: Purpose of Loan
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [128.12, 272.5, 137.88, 283.0]
+--------------------------------------------------
+Field Name: Property will be
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [534.12, 272.75, 543.88, 283.25]
+--------------------------------------------------
+Field Name: Year Lot Acquired
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [15.9, 319.05, 68.1, 332.55]
+--------------------------------------------------
+Field Name: Original Cost
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [78.3, 319.05, 162.3, 332.55]
+--------------------------------------------------
+Field Name: Amount Existing Liens
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [176.8, 319.25, 256.0, 332.75]
+--------------------------------------------------
+Field Name: Present Value of Lot
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [271.2, 319.05, 382.8, 332.55]
+--------------------------------------------------
+Field Name: Cost of Improvements
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [397.2, 319.05, 489.0, 332.55]
+--------------------------------------------------
+Field Name: Total a+b
+Field Type: Unknown (7)
+Current Value: 0
+Page: 0
+Rectangle: [502.5, 317.25, 591.0, 334.5]
+--------------------------------------------------
+Field Name: Year Lot Acquired 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [14.9, 367.6, 67.1, 390.7]
+--------------------------------------------------
+Field Name: Original Cost 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [79.43, 375.05, 163.43, 388.55]
+--------------------------------------------------
+Field Name: Amount Existing Liens 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [177.55, 376.0, 256.75, 389.5]
+--------------------------------------------------
+Field Name: Purpose of Refinance
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [266.15, 355.9, 380.15, 390.25]
+--------------------------------------------------
+Field Name: Describe Improvements Text
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [20.4, 429.95, 517.8, 452.45]
+--------------------------------------------------
+Field Name: Describe Improvements
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [530.12, 346.75, 539.88, 357.25]
+--------------------------------------------------
+Field Name: Cost of Improvements 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [405.55, 374.75, 592.75, 388.25]
+--------------------------------------------------
+Field Name: Title will be held in what names
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [20.2, 402.15, 348.4, 419.85]
+--------------------------------------------------
+Field Name: Manner in which Title will be held
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [353.7, 402.15, 518.1, 419.85]
+--------------------------------------------------
+Field Name: Estate will be held in
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [525.12, 414.25, 534.88, 424.75]
+--------------------------------------------------
+Field Name: Borrower Name
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [19.1, 473.15, 296.3, 486.05]
+--------------------------------------------------
+Field Name: Borrower SSN
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [19.2, 496.15, 112.8, 518.05]
+--------------------------------------------------
+Field Name: Borrower Home Phone
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [118.2, 505.35, 181.8, 518.25]
+--------------------------------------------------
+Field Name: Borrower DOB
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [187.5, 496.65, 253.5, 517.95]
+--------------------------------------------------
+Field Name: Borrower DOB Yrs School
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [258.0, 497.25, 297.0, 516.75]
+--------------------------------------------------
+Field Name: Borrower Marital Status
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [20.12, 531.75, 29.88, 542.25]
+--------------------------------------------------
+Field Name: Dependents not listed by Co-Borrower no
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [178.75, 531.1, 230.5, 549.4]
+--------------------------------------------------
+Field Name: Dependents not listed by Co-Borrower ages
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [248.62, 530.85, 294.38, 549.15]
+--------------------------------------------------
+Field Name: Borrower Own or Rent
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [213.62, 551.25, 223.38, 561.75]
+--------------------------------------------------
+Field Name: Borrower No of Years
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [237.1, 551.7, 253.1, 560.6]
+--------------------------------------------------
+Field Name: Borrower Present Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [19.65, 558.15, 293.85, 571.35]
+--------------------------------------------------
+Field Name: Borrower Mailing Address if different from Present
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [19.5, 580.05, 293.7, 592.5]
+--------------------------------------------------
+Field Name: Borrower Former Own or Rent
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [214.12, 606.75, 223.88, 617.25]
+--------------------------------------------------
+Field Name: Borrower No of Years Former Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [236.2, 607.25, 252.2, 616.75]
+--------------------------------------------------
+Field Name: Borrower Former Address if different from Present
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [20.1, 615.9, 294.3, 629.1]
+--------------------------------------------------
+Field Name: Co-Borrower Name
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [304.4, 473.55, 581.6, 485.95]
+--------------------------------------------------
+Field Name: Co-Borrower SSN
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [303.6, 496.35, 397.2, 517.05]
+--------------------------------------------------
+Field Name: Co-Borrower Home Phone
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [403.4, 505.35, 467.0, 518.25]
+--------------------------------------------------
+Field Name: Co-Borrower DOB
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [475.35, 496.35, 541.35, 517.65]
+--------------------------------------------------
+Field Name: Co-Borrower Yrs School
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [545.54, 496.89, 592.31, 518.19]
+--------------------------------------------------
+Field Name: Co-Borrower Marital Status
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [306.38, 531.5, 316.12, 542.0]
+--------------------------------------------------
+Field Name: Dependents not listed by Borrower no
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [468.31, 529.85, 520.06, 548.15]
+--------------------------------------------------
+Field Name: Dependents not listed by Borrower ages
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [540.44, 531.1, 586.19, 549.4]
+--------------------------------------------------
+Field Name: Co-Borrower Own or Rent
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [484.62, 551.25, 494.38, 561.75]
+--------------------------------------------------
+Field Name: Co-Borrower No of Years
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [507.6, 551.35, 523.6, 560.85]
+--------------------------------------------------
+Field Name: Co-Borrower Present Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [306.15, 559.65, 580.35, 572.1]
+--------------------------------------------------
+Field Name: Co-Borrower Mailing Address if different from Present
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [305.7, 579.9, 579.9, 593.1]
+--------------------------------------------------
+Field Name: Co-Borrower Former Own or Rent
+Field Type: Button
+Current Value: 
+Page: 0
+Rectangle: [484.62, 606.75, 494.38, 617.25]
+--------------------------------------------------
+Field Name: Co-Borrower No of Years Former Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [507.4, 606.65, 523.4, 616.15]
+--------------------------------------------------
+Field Name: Co-Borrower Former Address if different from Present
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [306.9, 615.9, 581.1, 629.1]
+--------------------------------------------------
+Field Name: Borrower Self Employed
+Field Type: Button
+Current Value: Off
+Page: 0
+Rectangle: [171.62, 639.75, 181.38, 650.25]
+--------------------------------------------------
+Field Name: Borrower Years on the job
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [280.2, 642.0, 317.4, 655.2]
+--------------------------------------------------
+Field Name: Borrower Name and Address of Employer
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [22.35, 651.9, 225.75, 688.5]
+--------------------------------------------------
+Field Name: Borrower Years employed in this Profession
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [280.6, 676.6, 317.8, 689.8]
+--------------------------------------------------
+Field Name: Borrower Position/Title/Type of Business
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [21.75, 698.85, 136.35, 712.2]
+--------------------------------------------------
+Field Name: Borrower Business phone
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [144.85, 698.2, 318.85, 712.3]
+--------------------------------------------------
+Field Name: Co-Borrower Self Employed
+Field Type: Button
+Current Value: Off
+Page: 0
+Rectangle: [446.62, 639.75, 456.38, 650.25]
+--------------------------------------------------
+Field Name: Co-Borrower Years on the job
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [556.8, 642.0, 594.0, 655.2]
+--------------------------------------------------
+Field Name: Co-Borrower Name and Address of Employer
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [322.8, 654.6, 501.0, 689.4]
+--------------------------------------------------
+Field Name: Co-Borrower Years employed in this Profession
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [558.95, 675.2, 596.15, 688.4]
+--------------------------------------------------
+Field Name: Co-Borrower Position/Title/Type of Business
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [323.7, 699.75, 462.3, 711.6]
+--------------------------------------------------
+Field Name: Co-Borrower Business phone
+Field Type: Unknown (7)
+Current Value: 
+Page: 0
+Rectangle: [471.6, 700.8, 604.8, 712.65]
+--------------------------------------------------
+Field Name: Check Box1
+Field Type: Button
+Current Value: Off
+Page: 0
+Rectangle: [230.25, 46.5, 239.25, 57.0]
+--------------------------------------------------
+Field Name: Check Box4
+Field Type: Button
+Current Value: Off
+Page: 0
+Rectangle: [61.5, 54.75, 69.75, 66.0]
+--------------------------------------------------
+Field Name: Borrower Self Employed 3
+Field Type: Button
+Current Value: Off
+Page: 1
+Rectangle: [169.12, 40.35, 178.88, 50.85]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont Dates of Employ
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [232.69, 49.04, 300.96, 63.46]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont Name and adress of Employ
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [21.0, 52.8, 222.6, 89.4]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont monthly income of Employ
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [238.68, 73.79, 301.17, 89.17]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont position title
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [22.12, 101.92, 188.46, 122.12]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont phone
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [196.15, 109.62, 300.96, 123.08]
+--------------------------------------------------
+Field Name: Borrower Self Employed 4
+Field Type: Button
+Current Value: Off
+Page: 1
+Rectangle: [457.92, 40.55, 467.67, 51.05]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont Dates of Employ
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [523.73, 50.0, 589.43, 63.46]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont Name and adress of Employ
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [310.01, 50.45, 511.61, 87.05]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont monthly income of Employ
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [525.0, 75.04, 588.47, 89.46]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont position title
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [309.98, 99.4, 476.33, 122.48]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont phone
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [486.5, 109.66, 590.35, 123.12]
+--------------------------------------------------
+Field Name: Borrower Self Employed 5
+Field Type: Button
+Current Value: 
+Page: 1
+Rectangle: [457.73, 124.95, 467.48, 135.45]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont Dates of Employ 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [231.56, 132.36, 299.83, 146.79]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont Name and adress of Employ 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [21.36, 135.88, 222.96, 172.47]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont monthly income of Employ 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [237.29, 154.11, 299.79, 169.5]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont position title2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [23.98, 181.05, 190.33, 196.44]
+--------------------------------------------------
+Field Name: Borrower Employment info Cont phone 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [245.42, 174.94, 299.83, 197.4]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont Dates of Employ 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [518.1, 133.33, 588.29, 146.79]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont Name and adress of Employ 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [308.87, 135.02, 510.47, 171.62]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont monthly income of Employ 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [523.75, 156.44, 587.21, 170.86]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont position title 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [310.04, 180.93, 476.39, 200.4]
+--------------------------------------------------
+Field Name: Co-Borrower Employment info Cont phone 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [533.04, 175.18, 588.29, 196.44]
+--------------------------------------------------
+Field Name: Monthly income Borrower Base a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [111.6, 228.6, 168.6, 241.05]
+--------------------------------------------------
+Field Name: Monthly income Borrower Bonuses 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [111.55, 241.35, 168.55, 255.3]
+--------------------------------------------------
+Field Name: Monthly income Borrower Bonuses a1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [110.75, 256.45, 167.75, 266.65]
+--------------------------------------------------
+Field Name: Monthly income Borrower Commissions a5
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [110.55, 270.05, 167.55, 280.25]
+--------------------------------------------------
+Field Name: Monthly income Borrower Dividends a10
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [110.35, 283.05, 167.35, 293.25]
+--------------------------------------------------
+Field Name: Monthly income Borrower Net Rental income 16
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [109.55, 294.55, 166.55, 306.25]
+--------------------------------------------------
+Field Name: Monthly income Borrower Other a21
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [109.35, 311.25, 166.35, 332.25]
+--------------------------------------------------
+Field Name: Monthly income Borrower Total a29
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [108.55, 333.85, 165.55, 344.05]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Base c
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [188.1, 227.1, 245.1, 239.55]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Overtime 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [187.05, 242.55, 244.05, 255.0]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Bonuses a2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [186.5, 254.65, 243.5, 267.1]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Commissions a6
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [187.05, 267.5, 244.05, 279.95]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Dividends/Interest a11
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [186.85, 282.75, 243.85, 292.95]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Net Rental Income 17
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [186.05, 295.75, 243.05, 307.45]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Other a23
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [188.1, 311.1, 245.1, 332.7]
+--------------------------------------------------
+Field Name: Monthly income Co-Borrower Total a30
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [187.05, 333.55, 244.05, 345.25]
+--------------------------------------------------
+Field Name: Monthly income Borrower Total c
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [265.9, 228.3, 322.9, 238.5]
+--------------------------------------------------
+Field Name: Monthly income Borrower Overtime Total 1
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [265.85, 241.05, 322.85, 251.25]
+--------------------------------------------------
+Field Name: Monthly income Borrower Bonuses Total a3
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [265.05, 256.15, 322.05, 266.35]
+--------------------------------------------------
+Field Name: Monthly income Borrower Commissions Total a7
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [264.85, 268.25, 321.85, 279.95]
+--------------------------------------------------
+Field Name: Monthly income Borrower Dividens/Interest Total a13
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [264.65, 282.75, 321.65, 292.95]
+--------------------------------------------------
+Field Name: Monthly income Borrower Net Rental Income Total a18
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [263.85, 295.75, 320.85, 305.95]
+--------------------------------------------------
+Field Name: Monthly income Borrower Other Total a24
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [263.65, 309.35, 320.65, 330.95]
+--------------------------------------------------
+Field Name: Monthly income Borrower Total Total a31
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [263.85, 333.55, 320.85, 343.75]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Rent Present a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [455.15, 228.85, 512.15, 239.05]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense First M 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [454.65, 242.25, 511.65, 252.45]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense there Financing a3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [455.05, 256.45, 512.05, 266.65]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Hazard Ins a8
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [455.05, 269.65, 512.05, 279.85]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Real Estate Taxes a14
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [455.05, 281.7, 512.05, 292.65]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Mortgage Insurance a19
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [454.85, 294.4, 511.85, 306.85]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Homeowner Assn. Dues a25
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [455.05, 310.0, 512.05, 320.2]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Other a27
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [454.45, 322.05, 511.45, 332.25]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Total a32
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [454.25, 334.45, 511.25, 344.65]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense First M Proposed 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [530.4, 241.95, 587.4, 253.65]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense there Financing Proposed a4
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [530.55, 256.15, 587.55, 266.35]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense there Financing Proposed a9
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [531.3, 269.35, 588.3, 279.55]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Real Estate Taxes Proposed a15
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [530.55, 282.15, 587.55, 292.35]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Mortgage Insurance Proposed a20
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [530.35, 296.35, 587.35, 306.55]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Homeowner Assn. Dues Proposed a25
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [530.55, 309.95, 587.55, 320.15]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Other Proposed a28
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [530.95, 321.75, 587.95, 331.95]
+--------------------------------------------------
+Field Name: Combined Monthly Housing Expense Total Proposed a33
+Field Type: Unknown (7)
+Current Value: 0
+Page: 1
+Rectangle: [530.75, 334.15, 587.75, 344.35]
+--------------------------------------------------
+Field Name: Text3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [15.6, 408.0, 39.6, 418.8]
+--------------------------------------------------
+Field Name: Describe other income 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [42.75, 406.5, 504.0, 420.0]
+--------------------------------------------------
+Field Name: Describe other income 1 Monthy Amount
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [521.25, 406.5, 592.5, 417.75]
+--------------------------------------------------
+Field Name: Text8
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [15.0, 418.8, 40.8, 427.8]
+--------------------------------------------------
+Field Name: Describe other income 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [42.87, 418.12, 504.13, 428.62]
+--------------------------------------------------
+Field Name: Describe other income 2 Monthy Amount
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [520.5, 418.5, 591.75, 427.5]
+--------------------------------------------------
+Field Name: Text9
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [15.6, 427.8, 40.2, 436.8]
+--------------------------------------------------
+Field Name: Describe other income 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [42.37, 427.38, 503.63, 437.88]
+--------------------------------------------------
+Field Name: Monthly Amount Total
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [521.25, 425.5, 593.25, 437.5]
+--------------------------------------------------
+Field Name: Assets and Liabilities check box 1
+Field Type: Button
+Current Value: Off
+Page: 1
+Rectangle: [479.6, 479.0, 489.3, 490.4]
+--------------------------------------------------
+Field Name: Check Box6
+Field Type: Button
+Current Value: Off
+Page: 1
+Rectangle: [509.5, 479.0, 519.1, 489.7]
+--------------------------------------------------
+Field Name: Asset Description Cash Deposit
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [80.5, 523.0, 153.0, 544.0]
+--------------------------------------------------
+Field Name: Asset Description Cash or Market Value 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [168.5, 523.0, 236.0, 542.5]
+--------------------------------------------------
+Field Name: Assets Name and Adress of Bank, S&L, Or Credit Union
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [21.5, 573.5, 235.5, 615.5]
+--------------------------------------------------
+Field Name: Assets Acct no 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [47.5, 617.5, 139.5, 629.0]
+--------------------------------------------------
+Field Name: Assets Acct no 1 Balance a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [150.0, 617.5, 235.0, 629.0]
+--------------------------------------------------
+Field Name: Assets Name and Adress of Bank, S&L, Or Credit Union 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [22.0, 640.0, 235.5, 669.5]
+--------------------------------------------------
+Field Name: Assets Acct no 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [49.5, 670.0, 140.0, 684.0]
+--------------------------------------------------
+Field Name: Assets Acct no 1 Balance b
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [151.0, 671.5, 235.0, 684.5]
+--------------------------------------------------
+Field Name: Assets Name and Adress of Bank, S&L, Or Credit Union 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [23.0, 695.5, 236.5, 725.0]
+--------------------------------------------------
+Field Name: Assets Acct no 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [47.0, 727.5, 139.5, 738.5]
+--------------------------------------------------
+Field Name: Assets Acct no 3 Balance 4
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [151.75, 727.5, 236.75, 738.0]
+--------------------------------------------------
+Field Name: Liabilities Name and Adress 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [243.25, 576.5, 392.25, 615.5]
+--------------------------------------------------
+Field Name: Monthly Payment & Months to Pay 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [405.0, 576.0, 504.0, 598.5]
+--------------------------------------------------
+Field Name: Unpaid Balance 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [518.31, 574.44, 596.16, 596.94]
+--------------------------------------------------
+Field Name: Liabilities Acct no 1a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [270.5, 617.5, 391.5, 629.0]
+--------------------------------------------------
+Field Name: Text22
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [243.5, 640.0, 391.5, 669.5]
+--------------------------------------------------
+Field Name: Monthly Payment & Months to Pay 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [405.54, 644.37, 504.54, 666.87]
+--------------------------------------------------
+Field Name: Unpaid Balance 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [519.6, 644.37, 597.45, 666.87]
+--------------------------------------------------
+Field Name: Liabilities Acct no 2a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [267.5, 670.5, 391.5, 685.5]
+--------------------------------------------------
+Field Name: Liabilities Name and Adress 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [243.0, 695.5, 391.0, 726.0]
+--------------------------------------------------
+Field Name: Monthly Payment & Months to Pay 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [405.19, 698.83, 504.19, 721.33]
+--------------------------------------------------
+Field Name: Unpaid Balance 3a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [520.58, 699.04, 598.42, 721.54]
+--------------------------------------------------
+Field Name: Liabilities Acct no 3a
+Field Type: Unknown (7)
+Current Value: 
+Page: 1
+Rectangle: [269.5, 727.0, 391.0, 738.5]
+--------------------------------------------------
+Field Name: Assets Name and Adress of Bank, S&L, Or Credit Union 4
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [22.79, 49.0, 236.29, 78.5]
+--------------------------------------------------
+Field Name: Assets Acct no 4
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [46.79, 81.0, 139.29, 92.0]
+--------------------------------------------------
+Field Name: Assets Acct no 4 Balance 5
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [150.79, 81.0, 235.79, 91.5]
+--------------------------------------------------
+Field Name: Asset/Liabilities Stocks and Bonds
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [22.5, 109.5, 139.5, 150.0]
+--------------------------------------------------
+Field Name: Asset/Liabilities Stocks and Bonds Balance
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [149.25, 109.5, 234.75, 150.0]
+--------------------------------------------------
+Field Name: Life Insurance Net Cash Value
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [70.5, 162.0, 138.75, 181.5]
+--------------------------------------------------
+Field Name: Life Insurance Net Cash Value Total
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [152.25, 161.25, 234.75, 182.25]
+--------------------------------------------------
+Field Name: Subtotal Liquid Asets
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [153.0, 185.25, 233.25, 198.75]
+--------------------------------------------------
+Field Name: Real Estate Market Value
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [153.0, 200.25, 234.75, 216.75]
+--------------------------------------------------
+Field Name: Vested interest in Retirement Fund
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [152.25, 218.25, 235.5, 230.25]
+--------------------------------------------------
+Field Name: Net Worth of Business owned
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [151.5, 232.5, 234.75, 250.5]
+--------------------------------------------------
+Field Name: Text1
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [48.75, 262.5, 139.5, 294.0]
+--------------------------------------------------
+Field Name: Automobiles Owned Make and Year
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [151.5, 262.5, 234.75, 294.75]
+--------------------------------------------------
+Field Name: other assets itemized
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [48.75, 306.0, 138.0, 353.25]
+--------------------------------------------------
+Field Name: Other Assets Itemize
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [152.25, 297.0, 234.0, 351.75]
+--------------------------------------------------
+Field Name: total_assets
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [152.25, 356.25, 234.0, 380.25]
+--------------------------------------------------
+Field Name: Liabilities Name and Adress 4
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [242.79, 49.0, 390.79, 79.5]
+--------------------------------------------------
+Field Name: Monthly Payment & Months to Pay 4
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [404.98, 52.33, 503.98, 74.83]
+--------------------------------------------------
+Field Name: Unpaid Balance 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [520.37, 53.29, 598.21, 75.79]
+--------------------------------------------------
+Field Name: Liabilities Acct no 4 a
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [269.29, 80.5, 390.79, 92.0]
+--------------------------------------------------
+Field Name: Asset/Liabilities Stocks and Bonds Name and Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [243.0, 105.75, 390.0, 136.5]
+--------------------------------------------------
+Field Name: Asset/Liabilities Stocks and Bonds Monthly Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [403.5, 109.5, 502.5, 148.5]
+--------------------------------------------------
+Field Name: Text33
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [516.75, 109.5, 591.75, 146.25]
+--------------------------------------------------
+Field Name: Asset/Liabilities Stocks and Bonds Acct no
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [271.5, 139.5, 389.25, 149.25]
+--------------------------------------------------
+Field Name: Life insurance Name and Address
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [243.75, 161.25, 389.25, 228.0]
+--------------------------------------------------
+Field Name: Life Insurance Monthly Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [404.25, 162.0, 502.5, 247.5]
+--------------------------------------------------
+Field Name: Life Insurance Monthly Payments Totals
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [516.75, 160.5, 592.5, 247.5]
+--------------------------------------------------
+Field Name: Text42
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [273.75, 239.25, 389.25, 250.5]
+--------------------------------------------------
+Field Name: Monthly Child Support Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [247.5, 267.0, 389.25, 292.5]
+--------------------------------------------------
+Field Name: Auto Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [408.0, 257.25, 503.25, 292.5]
+--------------------------------------------------
+Field Name: Job Related Expenses
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [247.5, 306.0, 390.0, 338.25]
+--------------------------------------------------
+Field Name: Other Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [408.75, 297.0, 503.25, 336.0]
+--------------------------------------------------
+Field Name: Total Monthly Payments 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [408.0, 341.25, 503.25, 354.0]
+--------------------------------------------------
+Field Name: net_worth_aminusb
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [324.0, 357.75, 390.75, 378.0]
+--------------------------------------------------
+Field Name: liab_total
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [518.25, 357.0, 588.75, 378.75]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1a
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [16.5, 431.25, 168.0, 450.0]
+--------------------------------------------------
+Field Name: S,PS or Ra
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [174.75, 431.25, 191.25, 450.0]
+--------------------------------------------------
+Field Name: Type of Propertya
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [195.0, 432.0, 228.75, 450.75]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Market Value
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [240.5, 431.25, 285.5, 449.25]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Amount of Mortgages Liens
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [299.75, 431.25, 347.0, 449.25]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Gross Rental Income
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [361.25, 431.25, 405.5, 448.5]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Mortage Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [421.25, 431.25, 469.25, 448.5]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Insurance Maintenance Taxes
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [487.25, 430.5, 531.5, 449.25]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Net Rental Income a
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [547.25, 430.5, 589.25, 449.25]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2a
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [17.25, 453.0, 168.75, 471.0]
+--------------------------------------------------
+Field Name: S,PS or Rb
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [173.25, 453.75, 191.25, 470.25]
+--------------------------------------------------
+Field Name: Type of Property 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [196.5, 453.0, 229.5, 473.25]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2  Market Value
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [241.12, 454.12, 286.12, 472.12]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2  Amount of Mortgages Liens
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [300.38, 454.12, 347.62, 472.12]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2 Gross Rental Income
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [361.12, 454.12, 405.38, 471.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2 Mortage Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [421.88, 454.12, 469.88, 471.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2 Insurance Maintenance Taxes
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [487.88, 453.38, 532.13, 472.12]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 2 Net Rental Income
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [547.88, 453.38, 589.88, 472.12]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3a
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [16.5, 474.75, 167.25, 494.25]
+--------------------------------------------------
+Field Name: S,PS or Rc
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [173.25, 474.75, 189.75, 492.75]
+--------------------------------------------------
+Field Name: Type of Property 3
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [195.0, 475.5, 229.5, 495.0]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3 Market Value
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [240.62, 475.38, 285.62, 493.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3 Amount of Mortgages Liens
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [300.62, 475.38, 347.88, 493.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3 Gross Rental Income
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [361.38, 475.38, 405.62, 492.62]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3 Mortage Payments
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [421.38, 475.38, 469.38, 492.62]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3 Insurance Maintenance Taxes
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [487.0, 473.0, 532.0, 491.0]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 3 Net Rental Income
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [547.38, 474.62, 589.38, 493.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address Totals Market Value
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [242.0, 496.0, 287.0, 514.0]
+--------------------------------------------------
+Field Name: Owned Real Estate Address Totals Amount of Mortgages Liens
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [299.38, 495.88, 346.62, 513.88]
+--------------------------------------------------
+Field Name: Owned Real Estate Address Totals Gross Rental Income
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [360.88, 498.12, 405.12, 515.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address Totals Mortage Payments
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [421.62, 498.12, 469.63, 515.38]
+--------------------------------------------------
+Field Name: Owned Real Estate Address Totals Insurance Maintenance Taxes
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [487.63, 495.88, 531.88, 514.62]
+--------------------------------------------------
+Field Name: Owned Real Estate Address 1 Net Rental Income b
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [547.63, 497.38, 589.63, 516.12]
+--------------------------------------------------
+Field Name: Alternate Name 1
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [15.0, 541.5, 274.5, 555.0]
+--------------------------------------------------
+Field Name: Alternate Name 1 Creditior
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [279.0, 540.75, 467.25, 554.25]
+--------------------------------------------------
+Field Name: Alternate Name 1 Account No
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [471.0, 541.5, 589.5, 555.0]
+--------------------------------------------------
+Field Name: Alternate Name 2
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [15.75, 557.63, 275.25, 571.13]
+--------------------------------------------------
+Field Name: Alternate Name 2 Creditior
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [471.75, 557.63, 590.25, 571.13]
+--------------------------------------------------
+Field Name: Purchase Price
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [178.5, 600.75, 222.0, 617.25]
+--------------------------------------------------
+Field Name: Alterations and Repairs
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [177.75, 621.0, 222.0, 633.75]
+--------------------------------------------------
+Field Name: Land Separately
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [177.0, 637.5, 222.0, 648.75]
+--------------------------------------------------
+Field Name: Refinance
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [177.0, 653.25, 221.25, 667.5]
+--------------------------------------------------
+Field Name: Estimated Prepaid items
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [176.1, 669.0, 222.0, 680.25]
+--------------------------------------------------
+Field Name: Estimated Closing costs
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [175.35, 684.0, 222.0, 696.0]
+--------------------------------------------------
+Field Name: PMI, MIP, Funding Fee
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [175.2, 696.75, 222.0, 711.75]
+--------------------------------------------------
+Field Name: Discount if borrower will pay
+Field Type: Unknown (7)
+Current Value: 
+Page: 2
+Rectangle: [174.9, 714.0, 220.5, 730.5]
+--------------------------------------------------
+Field Name: Total Costs
+Field Type: Unknown (7)
+Current Value: 0
+Page: 2
+Rectangle: [175.65, 736.5, 221.25, 755.25]
+--------------------------------------------------
+Field Name: Borrower Judgements against
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [500.0, 623.0, 510.0, 633.0]
+--------------------------------------------------
+Field Name: Co-Borrower Judgements against
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [566.0, 623.0, 577.0, 634.0]
+--------------------------------------------------
+Field Name: Borrower Bankrupt
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [501.0, 636.0, 510.0, 646.0]
+--------------------------------------------------
+Field Name: Co-Borrower Bankrupt y
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [567.0, 637.0, 577.0, 648.0]
+--------------------------------------------------
+Field Name: Check Box
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [500.0, 652.0, 510.0, 663.0]
+--------------------------------------------------
+Field Name: Co-Borrower Forclose y
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [567.0, 654.0, 577.0, 664.0]
+--------------------------------------------------
+Field Name: Borrower Lawsuit
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [500.0, 669.0, 511.0, 680.0]
+--------------------------------------------------
+Field Name: Co-Borrower Lawsuit y
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [567.0, 669.0, 577.0, 679.0]
+--------------------------------------------------
+Field Name: Borrower Liability
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [500.0, 685.0, 511.0, 695.0]
+--------------------------------------------------
+Field Name: Co-Borrower Liability y
+Field Type: RadioButton
+Current Value: Off
+Page: 2
+Rectangle: [567.0, 684.0, 577.0, 694.0]
+--------------------------------------------------
+Field Name: Subordinate Financing
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [166.0, 39.5, 221.0, 61.0]
+--------------------------------------------------
+Field Name: Borrower's closong paid by seller
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [166.5, 64.0, 221.0, 91.5]
+--------------------------------------------------
+Field Name: Text4
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [39.5, 105.5, 163.5, 131.0]
+--------------------------------------------------
+Field Name: Other credits
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [166.0, 95.0, 222.5, 129.5]
+--------------------------------------------------
+Field Name: Loan Amount
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [166.5, 134.5, 222.5, 179.0]
+--------------------------------------------------
+Field Name: PMI, MIP Funding Fee financed
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [167.0, 182.5, 222.0, 224.0]
+--------------------------------------------------
+Field Name: Loan Amount M+N
+Field Type: Unknown (7)
+Current Value: 0
+Page: 3
+Rectangle: [167.5, 227.5, 222.0, 250.5]
+--------------------------------------------------
+Field Name: Cash to from Borrower
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [168.0, 252.5, 222.5, 300.5]
+--------------------------------------------------
+Field Name: Default on Dept
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [499.0, 73.0, 510.0, 83.0]
+--------------------------------------------------
+Field Name: Co-Borrower Default on Dept Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [564.9, 71.5, 575.5, 83.5]
+--------------------------------------------------
+Field Name: Child Support
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [498.0, 98.0, 509.0, 108.0]
+--------------------------------------------------
+Field Name: Co-Borrower Child Support Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [565.0, 97.0, 576.0, 108.0]
+--------------------------------------------------
+Field Name: Borrowed down Payment
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [500.0, 117.0, 510.0, 127.0]
+--------------------------------------------------
+Field Name: Co-Borrower Borrowed down Payment Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [565.0, 117.0, 576.0, 128.0]
+--------------------------------------------------
+Field Name: Endorsermor Co-maker of Paymnets
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [501.0, 137.0, 511.0, 149.0]
+--------------------------------------------------
+Field Name: Co-Borrower Endorsermor Co-maker of Paymnets Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [565.94, 138.19, 575.06, 148.04]
+--------------------------------------------------
+Field Name: US Citizen Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [501.0, 163.0, 511.0, 174.0]
+--------------------------------------------------
+Field Name: Co-Borrower US Citizen Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [565.31, 164.12, 577.06, 174.99]
+--------------------------------------------------
+Field Name: Resident Alien Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [501.0, 184.0, 511.0, 195.0]
+--------------------------------------------------
+Field Name: Co-Borrower Resident Alien Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [565.81, 185.12, 576.17, 194.97]
+--------------------------------------------------
+Field Name: Owner Occupied Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [500.0, 206.0, 510.0, 217.0]
+--------------------------------------------------
+Field Name: Co-Borrower Owner Occupied Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [566.75, 207.12, 577.0, 216.81]
+--------------------------------------------------
+Field Name: Previous 3 years Owner Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [500.0, 240.0, 510.0, 250.0]
+--------------------------------------------------
+Field Name: Co-Borrower Previous 3 years Owner Y
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [567.5, 242.5, 577.7, 252.8]
+--------------------------------------------------
+Field Name: Type of property owned Borrower
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [479.5, 252.0, 509.5, 270.5]
+--------------------------------------------------
+Field Name: Type of property owned Co-Borrower
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [544.5, 254.0, 575.5, 270.5]
+--------------------------------------------------
+Field Name: How was titlte held Borrower?
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [480.0, 273.5, 511.0, 289.0]
+--------------------------------------------------
+Field Name: How was titlte held Co-Borrower?
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [547.0, 274.0, 574.5, 289.0]
+--------------------------------------------------
+Field Name: Signature Date
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [239.0, 463.0, 299.5, 484.5]
+--------------------------------------------------
+Field Name: Text168
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [524.0, 464.0, 588.5, 484.0]
+--------------------------------------------------
+Field Name: Borrower Race opt out
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [69.0, 557.0, 75.5, 564.0]
+--------------------------------------------------
+Field Name: Hisp or Latino
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [121.0, 566.66, 129.33, 573.99]
+--------------------------------------------------
+Field Name: Am. Indian or Alaska Native
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [53.0, 579.0, 61.5, 588.0]
+--------------------------------------------------
+Field Name: Borrower Asain
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [126.4, 575.6, 139.0, 587.9]
+--------------------------------------------------
+Field Name: Borrower Black African/Am
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [157.5, 576.5, 165.5, 586.5]
+--------------------------------------------------
+Field Name: Borrower Hawaiian/Islander
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [51.5, 593.5, 60.6, 603.5]
+--------------------------------------------------
+Field Name: Borrower White
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [128.0, 592.0, 136.5, 601.5]
+--------------------------------------------------
+Field Name: Borrower Sex
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [89.33, 611.34, 100.0, 621.34]
+--------------------------------------------------
+Field Name: Co-Borrower Race opt out
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [372.6, 558.0, 380.0, 566.0]
+--------------------------------------------------
+Field Name: Co-Borrower Hisp or Latino
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [411.34, 566.67, 420.0, 575.34]
+--------------------------------------------------
+Field Name: Co-Borrower Am. Indian or Alaska Native
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [343.5, 579.0, 349.5, 584.5]
+--------------------------------------------------
+Field Name: Co-Borrower Asain
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [420.1, 579.0, 426.0, 586.0]
+--------------------------------------------------
+Field Name: Co-Borrower Black African/Am
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [448.6, 577.5, 458.5, 588.7]
+--------------------------------------------------
+Field Name: Co-Borrower Hawaiian/Islander
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [339.75, 592.95, 348.5, 601.0]
+--------------------------------------------------
+Field Name: Check Box161
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [415.4, 595.0, 426.0, 604.7]
+--------------------------------------------------
+Field Name: Co-Borrower Sex
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [345.34, 611.34, 356.67, 621.34]
+--------------------------------------------------
+Field Name: Co-Borrower Sex M
+Field Type: RadioButton
+Current Value: Off
+Page: 3
+Rectangle: [382.0, 611.34, 392.0, 620.67]
+--------------------------------------------------
+Field Name: Face to Face
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [19.7, 636.2, 29.2, 644.5]
+--------------------------------------------------
+Field Name: Mail
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [19.0, 645.5, 27.5, 653.5]
+--------------------------------------------------
+Field Name: Phone
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [19.0, 655.0, 27.5, 662.0]
+--------------------------------------------------
+Field Name: Internet
+Field Type: Button
+Current Value: Off
+Page: 3
+Rectangle: [18.5, 663.0, 27.0, 670.0]
+--------------------------------------------------
+Field Name: Interviewer's name
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [215.5, 628.0, 398.0, 649.0]
+--------------------------------------------------
+Field Name: Name and Adress of Interviewer's Employer
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [409.0, 629.5, 592.5, 701.5]
+--------------------------------------------------
+Field Name: Text5
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [347.25, 654.0, 398.25, 676.5]
+--------------------------------------------------
+Field Name: Interviewer's Phone Number
+Field Type: Unknown (7)
+Current Value: 
+Page: 3
+Rectangle: [215.5, 683.5, 398.5, 704.0]
+--------------------------------------------------
+Field Name: Continuation Borrower
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [194.5, 41.5, 409.0, 72.0]
+--------------------------------------------------
+Field Name: Continuation Co-Borrower
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [200.0, 76.5, 408.0, 96.0]
+--------------------------------------------------
+Field Name: Text2
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [44.25, 112.5, 559.5, 669.75]
+--------------------------------------------------
+Field Name: Text6
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [238.5, 723.75, 302.25, 738.0]
+--------------------------------------------------
+Field Name: Text7
+Field Type: Unknown (7)
+Current Value: 
+Page: 4
+Rectangle: [525.0, 722.25, 591.75, 738.75]
+--------------------------------------------------

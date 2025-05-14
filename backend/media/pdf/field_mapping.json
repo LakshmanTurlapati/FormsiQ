@@ -1,0 +1,13 @@
+{
+  "Borrower First Name": "Borrower Name",
+  "Borrower Middle Name": "Borrower Name",
+  "Borrower Last Name": "Borrower Name",
+  "Current Street Address": "Borrower Present Address",
+  "Primary Phone Number": "Interviewer's Phone Number",
+  "Marital Status": "Borrower Marital Status",
+  "Monthly Income (Base)": "Monthly income Borrower Base a",
+  "Loan Amount Requested": "Loan Amount",
+  "Property Street Address (if different from current, or for purchase)": "Borrower Former Address if different from Present",
+  "Social Security Number": "Co-Borrower SSN",
+  "Date of Birth": "Borrower DOB"
+}

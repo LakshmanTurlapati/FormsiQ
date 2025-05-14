@@ -1,0 +1,71 @@
+<div class="transcript-container">
+  <h2>Call Transcript Processor</h2>
+  <p>Paste the call transcript below or upload a transcript file to extract information.</p>
+  
+  <div class="file-upload">
+    <label for="transcript-file">Upload Transcript File:</label>
+    <input 
+      type="file" 
+      id="transcript-file" 
+      accept=".txt,.doc,.docx,.pdf"
+      (change)="onFileSelected($event)"
+      [disabled]="isLoading"
+    >
+    <div *ngIf="selectedFile" class="selected-file">
+      Selected file: {{ selectedFile.name }} ({{ (selectedFile.size / 1024).toFixed(1) }} KB)
+      <button 
+        class="secondary-btn small-btn" 
+        (click)="clearSelectedFile()"
+        [disabled]="isLoading"
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label for="transcript-text">Or Paste Transcript Text:</label>
+    <textarea 
+      [(ngModel)]="transcriptText" 
+      id="transcript-text"
+      placeholder="Paste call transcript here..." 
+      rows="10"
+      [disabled]="isLoading || (selectedFile !== null)"
+    ></textarea>
+  </div>
+  
+  <div class="model-selection">
+    <label for="ai-model">Select AI Model:</label>
+    <select 
+      [(ngModel)]="selectedModel" 
+      id="ai-model"
+      [disabled]="isLoading"
+    >
+      <option value="gemma">Gemma 3</option>
+      <option value="grok">Grok 3 Mini</option>
+    </select>
+  </div>
+  
+  <div class="button-group">
+    <button 
+      (click)="onSubmit()" 
+      [disabled]="isLoading || (!transcriptText.trim() && selectedFile === null)"
+      class="primary-btn"
+    >
+      <span *ngIf="!isLoading">Process Transcript</span>
+      <span *ngIf="isLoading">Processing...</span>
+    </button>
+    
+    <button 
+      (click)="clearTranscript()" 
+      [disabled]="isLoading || (!transcriptText.trim() && selectedFile === null)"
+      class="secondary-btn"
+    >
+      Clear
+    </button>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>

@@ -1,0 +1,1904 @@
+{
+  "Mortgage Applied For": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Amortization Type": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Purpose of Loan": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Property will be": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Describe Improvements": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Estate will be held in": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Marital Status": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Marital Status": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Own or Rent": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Own or Rent": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Former Own or Rent": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Former Own or Rent": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Self Employed": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Interest Rate": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Subject Property Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Subject Property Description": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Amount": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Year Lot Acquired": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Original Cost": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Amount Existing Liens": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Present Value of Lot": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Cost of Improvements": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Year Lot Acquired 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Original Cost 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Amount Existing Liens 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Cost of Improvements 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Purpose of Refinance": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Describe Improvements Text": {
+    "type": "Tx",
+    "value": "",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower SSN": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Manner in which Title will be held": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower Name": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Name": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower SSN": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Home Phone": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Home Phone": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Year Built": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower DOB": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Yrs School": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower DOB Yrs School": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower DOB": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Dependents not listed by Co-Borrower no": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Dependents not listed by Co-Borrower ages": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Dependents not listed by Borrower no": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Dependents not listed by Borrower ages": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Title will be held in what names": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower No of Years": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Present Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Present Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower Mailing Address if different from Present": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Mailing Address if different from Present": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower Former Address if different from Present": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Former Address if different from Present": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower No of Years Former Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower No of Years Former Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Name and Address of Employer": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Name and Address of Employer": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower Years on the job": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Years on the job": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Years employed in this Profession": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Years employed in this Profession": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Position/Title/Type of Business": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Position/Title/Type of Business": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Business phone": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Business phone": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Self Employed": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont Name and adress of Employ": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower Employment info Cont Dates of Employ": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont monthly income of Employ": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont phone": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont position title": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont Name and adress of Employ": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont phone": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont position title": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont Dates of Employ": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont monthly income of Employ": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont Name and adress of Employ 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Borrower Employment info Cont Dates of Employ 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont monthly income of Employ 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont Name and adress of Employ 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont Dates of Employ 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont monthly income of Employ 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont phone 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Describe other income 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Describe other income 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Describe other income 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Describe other income 1 Monthy Amount": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Describe other income 2 Monthy Amount": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Check Box6": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Assets and Liabilities check box 1": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Asset Description Cash Deposit": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Asset Description Cash or Market Value 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Name and Adress of Bank, S&L, Or Credit Union": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Assets Name and Adress of Bank, S&L, Or Credit Union 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Assets Acct no 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text22": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Liabilities Name and Adress 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Unpaid Balance 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Unpaid Balance 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly Payment & Months to Pay 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly Payment & Months to Pay 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Name and Adress of Bank, S&L, Or Credit Union 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Liabilities Name and Adress 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Monthly Payment & Months to Pay 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Unpaid Balance 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Name and Adress of Bank, S&L, Or Credit Union 4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Liabilities Name and Adress 4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly Payment & Months to Pay 4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Asset/Liabilities Stocks and Bonds": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Asset/Liabilities Stocks and Bonds Balance": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Asset/Liabilities Stocks and Bonds Name and Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Asset/Liabilities Stocks and Bonds Acct no": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text33": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Asset/Liabilities Stocks and Bonds Monthly Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Life Insurance Net Cash Value": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Life Insurance Net Cash Value Total": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Subtotal Liquid Asets": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Real Estate Market Value": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Vested interest in Retirement Fund": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Life insurance Name and Address": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Life Insurance Monthly Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text42": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Life Insurance Monthly Payments Totals": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Net Worth of Business owned": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Automobiles Owned Make and Year": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Other Assets Itemize": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly Child Support Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Job Related Expenses": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Auto Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Other Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Total Monthly Payments 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Type of Property 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Type of Property 3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Market Value": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Amount of Mortgages Liens": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Gross Rental Income": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Mortage Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Insurance Maintenance Taxes": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2  Market Value": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2  Amount of Mortgages Liens": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2 Gross Rental Income": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2 Mortage Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2 Insurance Maintenance Taxes": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2 Net Rental Income": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3 Market Value": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3 Amount of Mortgages Liens": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3 Gross Rental Income": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3 Mortage Payments": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3 Insurance Maintenance Taxes": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3 Net Rental Income": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address Totals Market Value": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address Totals Amount of Mortgages Liens": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address Totals Gross Rental Income": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address Totals Mortage Payments": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address Totals Insurance Maintenance Taxes": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Alternate Name 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Alternate Name 1 Creditior": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Alternate Name 1 Account No": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Alternate Name 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Alternate Name 2 Creditior": {
+    "type": "Tx",
+    "value": "",
+    "flags": "",
+    "options": []
+  },
+  "Purchase Price": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Alterations and Repairs": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Land Separately": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Refinance": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Estimated Prepaid items": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Estimated Closing costs": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "PMI, MIP, Funding Fee": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Discount if borrower will pay": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Total Costs": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Subordinate Financing": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower's closong paid by seller": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Other credits": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Loan Amount": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "PMI, MIP Funding Fee financed": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Loan Amount M+N": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Cash to from Borrower": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Type of property owned Borrower": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Type of property owned Co-Borrower": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "How was titlte held Borrower?": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "How was titlte held Co-Borrower?": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Check Box161": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Race opt out": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Race opt out": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Asain": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Black African/Am": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Black African/Am": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Asain": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Hawaiian/Islander": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Hawaiian/Islander": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower White": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Text168": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Signature Date": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Co-Borrower Sex M": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "49152",
+    "options": []
+  },
+  "Face to Face": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Mail": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Phone": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Internet": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Interviewer's name": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Interviewer's Phone Number": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Name and Adress of Interviewer's Employer": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Continuation Borrower": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Continuation Co-Borrower": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Agency Case Number": {
+    "type": "Tx",
+    "value": "",
+    "flags": "",
+    "options": []
+  },
+  "Lender Case Number": {
+    "type": "Tx",
+    "value": "",
+    "flags": "",
+    "options": []
+  },
+  "Monthly Amount Total": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower No of Years": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont position title2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Co-Borrower Employment info Cont position title 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Text1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Text4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "4096",
+    "options": []
+  },
+  "Text5": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text6": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text7": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Total a+b": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Self Employed 3": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Self Employed 4": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Self Employed 5": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Monthly income Borrower Base a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Base c": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Total c": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Rent Present a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Bonuses 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Overtime 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Overtime Total 1": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense First M 1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense First M Proposed 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Bonuses a1": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Bonuses a2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Bonuses Total a3": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense there Financing a3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense there Financing Proposed a4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Commissions a5": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Commissions a6": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Commissions Total a7": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Hazard Ins a8": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense there Financing Proposed a9": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Dividends a10": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Dividends/Interest a11": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Dividens/Interest Total a13": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Real Estate Taxes a14": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Real Estate Taxes Proposed a15": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Net Rental income 16": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Net Rental Income 17": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Net Rental Income Total a18": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Mortgage Insurance a19": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Mortgage Insurance Proposed a20": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Other a21": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Other a23": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Other Total a24": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Other a27": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Other Proposed a28": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Total a29": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Co-Borrower Total a30": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Monthly income Borrower Total Total a31": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Total a32": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Combined Monthly Housing Expense Total Proposed a33": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 1 Balance a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 1 Balance b": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 3 Balance 4": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Assets Acct no 4 Balance 5": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Liabilities Acct no 4 a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Liabilities Acct no 3a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Liabilities Acct no 2a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Liabilities Acct no 1a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Unpaid Balance 3a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "other assets itemized": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 2a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 3a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "S,PS or Ra": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "S,PS or Rb": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "S,PS or Rc": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Type of Propertya": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text3": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text8": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text9": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Net Rental Income a": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Owned Real Estate Address 1 Net Rental Income b": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Text2": {
+    "type": "Tx",
+    "value": "\r\r\r\r\r\r\r\r\r",
+    "flags": "4096",
+    "options": []
+  },
+  "total_assets": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "liab_total": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "net_worth_aminusb": {
+    "type": "Tx",
+    "value": "0",
+    "flags": "0",
+    "options": []
+  },
+  "Borrower Employment info Cont phone 2": {
+    "type": "Tx",
+    "value": "",
+    "flags": "0",
+    "options": []
+  },
+  "Check Box1": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Check Box4": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "0",
+    "options": []
+  },
+  "Hisp or Latino": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Hisp or Latino": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Sex": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Sex": {
+    "type": "Btn",
+    "value": "/Off",
+    "flags": "49152",
+    "options": []
+  },
+  "Borrower Judgements against": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Bankrupt": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Check Box": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Lawsuit": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrower Liability": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Judgements against": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Bankrupt y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Forclose y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Lawsuit y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Liability y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Default on Dept": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Child Support": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Borrowed down Payment": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Endorsermor Co-maker of Paymnets": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "US Citizen Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Resident Alien Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Owner Occupied Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Default on Dept Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Child Support Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Borrowed down Payment Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Endorsermor Co-maker of Paymnets Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower US Citizen Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Resident Alien Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Owner Occupied Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Co-Borrower Previous 3 years Owner Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  },
+  "Previous 3 years Owner Y": {
+    "type": "Btn",
+    "value": "/",
+    "flags": "",
+    "options": []
+  }
+}

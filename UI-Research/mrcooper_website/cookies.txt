@@ -1,0 +1,13 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.mrcooper.com	TRUE	/	FALSE	1999999999	guid	2e40686a-6286-4d88-bfe6-9138e4f913f7
+www.mrcooper.com	TRUE	/	FALSE	1999999999	_purchase-web-session	acc64eea-f628-4a82-95a6-24811c11f4ec
+www.mrcooper.com	TRUE	/	FALSE	1999999999	_refi-web-session	57ebb06b-98c7-42d9-866b-e89025656257
+www.mrcooper.com	TRUE	/	FALSE	1999999999	showLpChat	true
+www.mrcooper.com	TRUE	/	FALSE	1999999999	utm_source	internal_ref
+www.mrcooper.com	TRUE	/	FALSE	1999999999	utm_campaign	https%3A%2F%2Fwww.mrcooper.com%2Fblog%2Fhow-much-does-it-cost-to-refinance-b%2F
+www.mrcooper.com	TRUE	/	FALSE	1999999999	utm_medium	blog
+www.mrcooper.com	TRUE	/	FALSE	1999999999	utm_term	get-started
+www.mrcooper.com	TRUE	/	FALSE	1999999999	_apollo-web_session	5d188fb7-bd86-4d4b-88ac-a59242fd7d82
+www.mrcooper.com	TRUE	/	FALSE	1999999999	experiments	2e40686a-6286-4d88-bfe6-9138e4f913f7!lQnDJvCjSlyRk1NLAci9Iw%3Aundefined!tRQVokWYTnK-NeibrMYg3Q%3Aundefined!gRryOn8HSrSQDGK3d9pu2Q%3Aundefined!BJzHHEV0QaiHQoicK_oybA%3Aundefined!Po4crsxjToqitMRAU8zhAw%3Aundefined
+

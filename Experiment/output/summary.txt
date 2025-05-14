@@ -1,0 +1,39 @@
+PDF Form Processing Summary
+=========================
+
+Input PDF: Experiment/uniform_residential_loan_application.pdf
+Output PDF: Experiment/output/filled_uniform_residential_loan_application.pdf
+
+Fields in PDF: 323
+Variables provided: 24
+Confidence threshold: 80%
+
+Results:
+- Fields filled: 18
+- Variables not mapped: 4
+
+Field Mappings:
+- 'Borrower First Name' -> 'Combined Monthly Housing Expense First M 1' = 'Brenda' (100.0%)
+- 'Borrower Middle Name' -> 'Title will be held in what names' = 'Carol' (100.0%)
+- 'Borrower Last Name' -> 'Title will be held in what names' = 'Parker' (100.0%)
+- 'Social Security Number' -> 'Borrower SSN' = '987656789' (80.0%)
+- 'Date of Birth' -> 'Borrower DOB' = '06/15/1988' (100.0%)
+- 'Current Street Address' -> 'Subject Property Address' = '123 Elm Street, Apartment 4B' (100.0%)
+- 'Current State' -> 'Estate will be held in' = 'TX' (100.0%)
+- 'Primary Phone Number' -> 'Phone' = '214-555-1212' (100.0%)
+- 'Email Address' -> 'Mail' = 'brenda.c.parker@exampleemail.com' (100.0%)
+- 'Marital Status' -> 'Borrower Marital Status' = 'Unmarried' (95.0%)
+- 'Current Employer Name' -> 'Title will be held in what names' = 'Innovatech Solutions LLC' (100.0%)
+- 'Job Title/Position' -> 'Title will be held in what names' = 'Senior Software Engineer' (100.0%)
+- 'Monthly Income (Base)' -> 'Borrower Employment info Cont monthly income of Employ' = '9500' (100.0%)
+- 'Monthly Income (Other, specify source if possible)' -> 'Borrower Employment info Cont monthly income of Employ' = '10' (80.0%)
+- 'Loan Amount Requested' -> 'Amount' = '$280,000' (100.0%)
+- 'Loan Purpose' -> 'Mortgage Applied For' = 'Purchase' (100.0%)
+- 'Property Street Address (if different from current, or for purchase)' -> 'Subject Property Address' = '456 Oak Lane' (100.0%)
+- 'Property State (if different from current, or for purchase)' -> 'Estate will be held in' = 'TX' (100.0%)
+
+Unmapped Variables:
+- 'Current City' = 'Pleasantville' (100.0%)
+- 'Current Zip Code' = '75002' (100.0%)
+- 'Property City (if different from current, or for purchase)' = 'Pleasantville' (100.0%)
+- 'Property Zip Code (if different from current, or for purchase)' = '75002' (100.0%)
