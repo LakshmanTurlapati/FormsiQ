@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.pyc
+__pycache__/
+*.sqlite3
+*.log
+*.DS_Store
+backend/venv/
+frontend/dist/
+frontend/.angular/
+frontend/.sass-cache/
+
