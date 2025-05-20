@@ -15,7 +15,7 @@
       <p class="hero-description">Turn mortgage call <span>transcripts into completed forms</span> within seconds, saving hours of manual work.</p>
       <div class="hero-buttons">
         <a href="#processor" class="primary-action-btn">Process Transcript</a>
-        <a href="#about" class="secondary-action-btn">Learn More</a>
+        <button type="button" class="secondary-action-btn" (click)="openNoteModal()">Learn More</button>
       </div>
     </div>
   </div>
@@ -37,3 +37,9 @@
     <p>&copy; 2025 FormsIQ - Call Transcript to Mortgage Form Extractor  <br>  By<strong> Venkat L. Turlpati</strong></p>
   </footer>
 </div>
+
+<app-note-modal 
+  [content]="noteContent" 
+  [visible]="showNoteModal" 
+  (close)="closeNoteModal()"
+></app-note-modal>

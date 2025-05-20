@@ -81,13 +81,35 @@ export class ResultsDisplayComponent implements OnChanges {
     this.uiMessage = 'Processing extracted fields and loading all PDF placeholders...';
     console.log('ResultsDisplayComponent: Calling fillPdf service with perform_fill: false', fieldsToProcess);
     
+    // Create a map of field names to confidence scores from the AI output
+    const confidenceMap = new Map<string, number>();
+    fieldsToProcess.forEach((field: any) => {
+      if (field.field_name && field.confidence_score !== undefined) {
+        confidenceMap.set(field.field_name, field.confidence_score);
+      }
+    });
+    
     this.apiService.fillPdf({ fields: fieldsToProcess, perform_fill: false }).subscribe({
       next: (response) => {
         console.log('ResultsDisplayComponent: Response from fillPdf (perform_fill: false):', response);
         this.isProcessingFields = false;
         this.pdfResult = response; 
 
+        // Get the mapped fields and add confidence scores
         this.textFieldsForDisplay = response.all_mapped_fields || [];
+        
+        // Add confidence scores to the mapped fields
+        this.textFieldsForDisplay.forEach(field => {
+          // If the field has a value (not unmapped) and we have a confidence score for it
+          if (field.value !== FIELD_NOT_MAPPED_VALUE) {
+            // Try to find a confidence score by field name
+            const confidence = confidenceMap.get(field.name);
+            if (confidence !== undefined) {
+              field.confidence_score = confidence;
+            }
+          }
+        });
+        
         this.checkboxFieldsForDisplay = response.checkbox_fields || [];
         this.radioGroupsForDisplay = response.radio_groups || [];
         
@@ -132,6 +154,14 @@ export class ResultsDisplayComponent implements OnChanges {
     this.pdfGenerationInProgress = true;
     this.uiMessage = 'Generating and downloading PDF...';
     
+    // Create a map of field names to confidence scores from the AI output
+    const confidenceMap = new Map<string, number>();
+    this.extractedData.fields.forEach((field: any) => {
+      if (field.field_name && field.confidence_score !== undefined) {
+        confidenceMap.set(field.field_name, field.confidence_score);
+      }
+    });
+    
     // Call fillPdf with perform_fill: true to generate the actual PDF file
     this.apiService.fillPdf({
       fields: this.extractedData.fields,
@@ -159,6 +189,19 @@ export class ResultsDisplayComponent implements OnChanges {
         
         // Re-populate display arrays as the backend might have more complete data after a fill attempt
         this.textFieldsForDisplay = result.all_mapped_fields || [];
+        
+        // Add confidence scores to the mapped fields
+        this.textFieldsForDisplay.forEach(field => {
+          // If the field has a value (not unmapped) and we have a confidence score for it
+          if (field.value !== FIELD_NOT_MAPPED_VALUE) {
+            // Try to find a confidence score by field name
+            const confidence = confidenceMap.get(field.name);
+            if (confidence !== undefined) {
+              field.confidence_score = confidence;
+            }
+          }
+        });
+        
         this.checkboxFieldsForDisplay = result.checkbox_fields || [];
         this.radioGroupsForDisplay = result.radio_groups || [];
         

@@ -35,10 +35,7 @@
       </svg>
       <span *ngIf="!pdfGenerationInProgress">Download Filled PDF</span>
       <span *ngIf="pdfGenerationInProgress" class="loading-text">
-        <svg class="spinner" viewBox="0 0 50 50">
-          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
-        </svg>
-        Generating PDF...
+        Downloading...
       </span>
     </button>
     
@@ -99,8 +96,7 @@
           <tr>
             <th>PDF Placeholder Name</th>
             <th>Value from AI (or Status)</th>
-            <th>PDF Field Key</th>
-            <th>PDF Type</th>
+            <th>Confidence</th>
           </tr>
         </thead>
         <tbody>
@@ -109,8 +105,17 @@
             <td [class.not-found]="field.value === FIELD_NOT_MAPPED_VALUE">
               {{ field.value === FIELD_NOT_MAPPED_VALUE ? 'Not Found in AI Output' : field.value }}
             </td>
-            <td>{{ field.key }}</td>
-            <td>{{ field.field_type }}</td>
+            <td>
+              <ng-container *ngIf="field.value !== FIELD_NOT_MAPPED_VALUE && field.confidence_score !== undefined">
+                <div class="confidence-indicator" 
+                     [ngClass]="{'high': field.confidence_score >= 0.7, 
+                                'medium': field.confidence_score >= 0.4 && field.confidence_score < 0.7,
+                                'low': field.confidence_score < 0.4}">
+                  {{ (field.confidence_score * 100).toFixed(0) }}%
+                </div>
+              </ng-container>
+              <span *ngIf="field.value === FIELD_NOT_MAPPED_VALUE">N/A</span>
+            </td>
           </tr>
         </tbody>
       </table>

@@ -1,0 +1,120 @@
+:host {
+  display: block;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  transform: translateY(-50px);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+.modal-content.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--light-gray);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--medium-gray);
+    padding: 0 0.5rem;
+    line-height: 1;
+
+    &:hover {
+      color: var(--dark-gray);
+    }
+  }
+}
+
+.modal-body {
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+
+  markdown {
+    h1, h2, h3 {
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+    }
+    p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    li {
+      margin-bottom: 0.25rem;
+    }
+    a {
+      color: var(--accent-color);
+      text-decoration: underline;
+      &:hover {
+        color: var(--primary-color);
+      }
+    }
+  }
+}
+
+.modal-footer {
+  border-top: 1px solid var(--light-gray);
+  padding-top: 1rem;
+  text-align: right;
+
+  .agree-btn {
+    // Uses global .primary-btn styles (pill, primary color)
+    // Add any specific overrides if needed, e.g., min-width
+  }
+} 

@@ -1,0 +1,14 @@
+<div class="modal-backdrop" [class.active]="visible" (click)="onClose()">
+  <div class="modal-content" [class.active]="visible" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>Important Information</h2>
+      <button class="close-btn" (click)="onClose()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <markdown [data]="content"></markdown>
+    </div>
+    <div class="modal-footer">
+      <button class="primary-btn agree-btn" (click)="onClose()">Agree</button>
+    </div>
+  </div>
+</div> 

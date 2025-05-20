@@ -456,7 +456,8 @@ def extract_fields_with_grok(transcript):
             # Add headers to ensure proper communication with x.AI's API
             default_headers={
                 "Content-Type": "application/json",
-            }
+            },
+            # Don't specify http_client at all to use the default client without custom settings
         )
         
         # Debug print to see request details
@@ -590,7 +591,9 @@ def extract_fields_with_grok(transcript):
         
         logger.error(f"Error calling Grok API: {error_msg}")
         logger.error(f"Error type: {error_type}")
-        return grok_field_extraction_wrapper(transcript)
+        # Raise the error instead of silently falling back
+        raise GrokExtractionError(f"Error calling Grok API: {error_msg}. Type: {error_type}")
+        # Let the error be caught by the calling views.py and returned as a proper error response
 
 
 def grok_field_extraction_wrapper(transcript):

@@ -12,6 +12,7 @@ export interface MappedPdfField {
   key: string;  // The internal PDF field key
   value: FieldValue | typeof FIELD_NOT_MAPPED_VALUE; // The value from AI, or the marker
   field_type: string; // e.g., /Tx, /Btn
+  confidence_score?: number; // Confidence score from AI (0-1 range)
 }
 
 export interface CheckboxField {
