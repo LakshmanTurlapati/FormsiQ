@@ -1,5 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, EventEmitter, Output, ElementRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 
@@ -15,46 +15,68 @@ export class TranscriptInputComponent {
   isLoading: boolean = false;
   errorMessage: string | null = null;
   selectedFile: File | null = null;
+  acknowledgedFileName: string | null = null;
+  acknowledgedFileSize: string | null = null;
   selectedModel: string = 'gemma'; // Default to Gemma 3
-
+  private isBrowser: boolean;
+  
+  @ViewChild('transcriptFileInput') transcriptFileInput!: ElementRef<HTMLInputElement>;
+  
   @Output() extractionComplete = new EventEmitter<any>();
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, @Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files.length > 0) {
-      this.selectedFile = input.files[0];
+      const file = input.files[0];
+      this.selectedFile = file;
+      this.acknowledgedFileName = file.name;
+      this.acknowledgedFileSize = '(' + (file.size / 1024).toFixed(1) + ' KB)';
       this.errorMessage = null;
       
       // If it's a text file, attempt to read its contents into the textarea
       if (this.selectedFile.type === 'text/plain') {
         this.readTextFile(this.selectedFile);
       }
+    } else {
+      this.clearAcknowledgedFile();
     }
   }
 
   readTextFile(file: File): void {
+    if (!this.isBrowser) return;
+    
     const reader = new FileReader();
     reader.onload = (e) => {
       if (e.target && typeof e.target.result === 'string') {
         this.transcriptText = e.target.result;
-        // After reading, clear the selectedFile so the textarea becomes editable
-        this.selectedFile = null;
+        // After reading, clear the selectedFile so the textarea becomes editable,
+        // but keep acknowledgedFileName
+        this.selectedFile = null; 
       }
     };
     
     reader.onerror = () => {
       this.errorMessage = "Error reading the file. Please try again or paste the text manually.";
       this.selectedFile = null;
+      // Keep acknowledgedFileName so user knows which file failed
     };
     
     reader.readAsText(file);
   }
 
-  clearSelectedFile(): void {
+  clearAcknowledgedFile(): void {
     this.selectedFile = null;
+    this.acknowledgedFileName = null;
+    this.acknowledgedFileSize = null;
     this.errorMessage = null;
+    // Clear the file input element using ViewChild reference instead of direct DOM access
+    if (this.isBrowser && this.transcriptFileInput?.nativeElement) {
+      this.transcriptFileInput.nativeElement.value = '';
+    }
   }
 
   onSubmit(): void {
@@ -92,6 +114,12 @@ export class TranscriptInputComponent {
   clearTranscript(): void {
     this.transcriptText = '';
     this.selectedFile = null;
+    this.acknowledgedFileName = null;
+    this.acknowledgedFileSize = null;
     this.errorMessage = null;
+    // Clear the file input element using ViewChild reference
+    if (this.isBrowser && this.transcriptFileInput?.nativeElement) {
+      this.transcriptFileInput.nativeElement.value = '';
+    }
   }
 }

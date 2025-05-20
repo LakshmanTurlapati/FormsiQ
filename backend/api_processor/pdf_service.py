@@ -5,17 +5,30 @@ import os
 import logging
 import tempfile
 import sys
+import json
+import time
 from pathlib import Path
 from django.conf import settings
+from django.http import JsonResponse
+from datetime import datetime
+import traceback
+
+import inspect
+from . import pdf_field_processor
+print(f"DEBUG: pdf_service.py is loading pdf_field_processor from: {inspect.getfile(pdf_field_processor)}")
+
+# Import NameObject here
+from pypdf.generic import NameObject
 
 # Add the backend directory to the Python path so we can import the enhanced modules
 backend_dir = Path(__file__).resolve().parent.parent
 if str(backend_dir) not in sys.path:
     sys.path.append(str(backend_dir))
 
-# Import our enhanced PDF handling modules
+# Import our enhanced PDF handling modules and the new PDFFieldProcessor
 from enhanced_pdf_handler import PDFAnalyzer, PDFFiller
 from ai_field_mapper import AIFieldMapper
+from .pdf_field_processor import PDFFieldProcessor
 
 # Import the legacy field mapping for backward compatibility
 from .field_mapping import get_pdf_field_name as legacy_get_pdf_field_name, LLM_TO_PDF_FIELD_MAP
@@ -44,8 +57,9 @@ def get_pdf_fields_info():
         dict: A dictionary of PDF field names and their attributes
     """
     try:
-        analyzer = PDFAnalyzer(PDF_TEMPLATE_PATH)
-        return analyzer.get_all_fields_info()
+        # Use the PDFFieldProcessor for more detailed field extraction
+        processor = PDFFieldProcessor(PDF_TEMPLATE_PATH)
+        return processor.extract_fields_info()
     except Exception as e:
         logger.error(f"Error getting PDF fields: {str(e)}")
         raise PDFFillError(f"Error getting PDF fields: {str(e)}")
@@ -129,193 +143,324 @@ def map_fields(extracted_fields):
         return {}
 
 
-def fill_pdf_form(extracted_fields):
+def fill_pdf_form(request_data_param):
     """
-    Fill the PDF form with extracted data.
+    Processes extracted data, maps it to PDF fields, gathers UI display data,
+    and then, if requested, attempts to fill the PDF form.
     
     Args:
-        extracted_fields (list): List of dictionaries with field_name, field_value, and confidence_score
+        request_data_param: Django request object or dict containing 'fields' and optionally 'perform_fill' flag.
         
     Returns:
-        str: Path to the filled PDF file
-        
-    Raises:
-        PDFFillError: If there's an error in the PDF filling process
+        dict: Containing 'filled_pdf_path' (str or None) and 'response_data' (dict for UI)
     """
+    output_filename = None # Initialize to handle potential early exit
+    output_path = None
+    data_to_fill = {} # Initialize
+    
+    # Initial response structure for UI, to be populated regardless of PDF fill success
+    # This structure will be returned even if PDF generation fails later
+    ui_response_data = {
+        'pdf_generation_status': 'pending', # Can be 'success' or 'failed'
+        'message': '',
+        'pdf_url': None,
+        'filled_pdf_path_ref': None, # Path to the successfully filled PDF, if any
+        'mapped_field_count': 0,
+        'all_mapped_fields': [],
+        'checkbox_fields': [],
+        'radio_groups': []
+    }
+
     try:
-        field_mapping = map_fields(extracted_fields) # Now uses a more robust mapping
-        
-        if not field_mapping:
-            logger.error("Field mapping failed to produce a usable mapping.")
-            # No longer falling back to legacy_get_pdf_field_name here as map_fields should be comprehensive
-            raise PDFFillError("Failed to map extracted fields to PDF fields (map_fields returned empty).")
+        # Renaming 'request' to 'request_data_param' to avoid conflict with Django's request object if this function is called directly
+        # with a dict that might itself contain a 'request' key (though unlikely here).
+        # Standardize access to 'fields' and 'perform_fill'
+        if hasattr(request_data_param, 'body') and isinstance(request_data_param.body, bytes): # Django HttpRequest
+            try:
+                request_data = json.loads(request_data_param.body.decode('utf-8'))
+            except json.JSONDecodeError:
+                logger.error("Failed to parse JSON from request body.")
+                raise PDFFillError("Invalid JSON in request body.")
+        elif isinstance(request_data_param, dict): # Already a dictionary
+            request_data = request_data_param
+        else:
+            logger.error(f"Unexpected request_data_param type: {type(request_data_param)}")
+            raise PDFFillError("Invalid request data format.")
 
-        # --- Logic for concatenating multipart fields ---
-        # Example: Borrower Name (First, Middle, Last), Address (Street, City, State, Zip)
-        # This needs to be done carefully based on PDF field structure and LLM output structure.
+        extracted_data = request_data.get('fields', request_data.get('extracted_data', []))
+        # perform_fill flag will be retrieved later, after extracted_data is confirmed.
         
-        processed_for_concatenation = {}
-        single_fields = []
+        logger.info(f"Received {len(extracted_data)} extracted fields to process for PDF form")
+        
+        if not extracted_data:
+            logger.error("No extracted data provided for PDF processing")
+            raise PDFFillError("No extracted data provided")
+            
+        template_path = os.path.join(settings.MEDIA_ROOT, 'pdf', 'uniform_residential_loan_application.pdf')
+        output_dir = os.path.join(settings.MEDIA_ROOT, 'pdf', 'output')
+        os.makedirs(output_dir, exist_ok=True)
+        
+        timestamp = int(time.time())
+        output_filename = f"filled_loan_application_{timestamp}.pdf"
+        output_path = os.path.join(output_dir, output_filename)
+        
+        processor = PDFFieldProcessor(template_path)
+        
+        logger.info("Mapping extracted data to PDF fields...")
+        data_to_fill = processor.map_user_data_to_pdf_fields(extracted_data) # This is Dict[pdf_key, str_or_NameObject]
+        ui_response_data['mapped_field_count'] = len(data_to_fill)
+        
+        logger.info("Extracting full PDF field information for UI response...")
+        all_pdf_fields_info = processor.extract_fields_info() # Detailed info for all fields in PDF
+        all_pdf_checkboxes_details = processor.list_checkbox_fields() # Info about all checkboxes in PDF
 
-        # Define multipart fields and their PDF target + order
-        # This structure assumes specific LLM field names for parts.
-        multipart_field_config = {
-            "Borrower Name": { # Target PDF Field from LLM_TO_PDF_FIELD_MAP
-                "parts": ["Borrower First Name", "Borrower Middle Name", "Borrower Last Name", "Borrower Suffix"],
-                "separator": " "
-            },
-            "Co-Borrower Name": {
-                 "parts": ["Co-Borrower First Name", "Co-Borrower Middle Name", "Co-Borrower Last Name", "Co-Borrower Suffix"],
-                 "separator": " "
-            },
-            "Borrower Present Address": { # Target PDF Field
-                "parts": ["Current Street Address", "Current City", "Current State", "Current Zip Code"],
-                "separator": ", " # Typical address format
-            },
-            # Add other multipart fields like "Property Address" if structured similarly
-            "Subject Property Address": {
-                 "parts": ["Property Street Address", "Property City", "Property State", "Property Zip Code"],
-                 "separator": ", "
-            }
+        # Prepare 'all_mapped_fields' for UI - Now includes ALL PDF fields
+        temp_all_mapped_fields = []
+        for pdf_key, pdf_field_detail in all_pdf_fields_info.items():
+            display_name = str(pdf_field_detail.get('name', pdf_key))
+            field_type_obj = pdf_field_detail.get('field_type', NameObject('Unknown'))
+            field_type_str = str(field_type_obj) if isinstance(field_type_obj, NameObject) else field_type_obj
+            
+            mapped_value = data_to_fill.get(pdf_key) # This could be a string or NameObject
+            
+            value_for_ui = None
+            if mapped_value is not None:
+                value_for_ui = str(mapped_value) if isinstance(mapped_value, NameObject) else mapped_value
+            else:
+                # Only mark as not mapped if it's not a button type (buttons handled by checkboxes/radios)
+                # or if it's a button type but doesn't have kids (standalone button that's not a typical checkbox)
+                # This avoids marking radio group containers themselves as "not mapped" for value
+                is_container_button = field_type_str == '/Btn' and pdf_field_detail.get('kids')
+                if not is_container_button: # Text fields, or non-container buttons
+                     value_for_ui = "__FIELD_NOT_MAPPED__"
+                # For container buttons (radio groups), their "value" is the selected kid, handled by radio_groups section
+
+            # Add to list if it's not a radio group container (those are handled in radio_groups)
+            # or if it IS a radio group container but we want to list it (e.g. for debugging, but typically not shown as a fillable "text" field)
+            # For now, let's exclude radio group containers from 'all_mapped_fields' to avoid redundancy,
+            # as their state is fully described in 'radio_groups'.
+            # We will also exclude checkbox containers if they are handled by `list_checkbox_fields` better.
+            
+            # We only want to add text fields, or unmapped/unhandled button types to this list.
+            # Checkboxes are handled by `temp_checkbox_fields`. Radio groups by `temp_radio_groups`.
+            if field_type_str == '/Tx': # It's a Text field
+                temp_all_mapped_fields.append({
+                    'name': display_name,
+                    'key': pdf_key,
+                    'value': value_for_ui,
+                    'field_type': field_type_str
+                })
+            elif field_type_str == '/Btn' and not pdf_field_detail.get('kids') and pdf_key not in all_pdf_checkboxes_details:
+                # A standalone button that wasn't categorized as a checkbox by list_checkbox_fields
+                # These might be actual action buttons, or oddly defined checkboxes.
+                temp_all_mapped_fields.append({
+                    'name': display_name,
+                    'key': pdf_key,
+                    'value': value_for_ui if value_for_ui is not None else "__FIELD_NOT_MAPPED__", # Ensure it gets a not_mapped if no value
+                    'field_type': field_type_str
+                })
+
+        ui_response_data['all_mapped_fields'] = temp_all_mapped_fields
+
+        # Prepare 'checkbox_fields' for UI (all checkboxes from PDF and their intended state)
+        temp_checkbox_fields = []
+        for cb_key, cb_detail_from_processor in all_pdf_checkboxes_details.items():
+            descriptive_name = str(cb_detail_from_processor.get('partial_name', cb_key))
+            pdf_on_value_str = str(cb_detail_from_processor.get('on_state_value', '/Yes')) 
+            
+            intended_status_checked = False
+            if cb_key in data_to_fill: 
+                intended_value_obj = data_to_fill[cb_key] 
+                if isinstance(intended_value_obj, NameObject) and intended_value_obj != NameObject("/Off"):
+                    intended_status_checked = True
+            # If not in data_to_fill, it remains false (unchecked) by default for UI.
+            
+            temp_checkbox_fields.append({
+                'key': cb_key,
+                'name': descriptive_name,
+                'checked': intended_status_checked, 
+                'on_value_in_pdf': pdf_on_value_str 
+            })
+        ui_response_data['checkbox_fields'] = temp_checkbox_fields
+
+        # Prepare 'radio_groups' for UI (all radio groups from PDF and their intended selection)
+        temp_radio_groups = []
+        for field_key, field_detail in all_pdf_fields_info.items():
+            if field_detail.get('field_type') == NameObject('/Btn') and 'kids' in field_detail and field_detail['kids']:
+                group_descriptive_name = str(field_detail.get('name', field_key))
+                options_for_ui = []
+                intended_selected_option_export_value = None 
+
+                selected_kid_on_state_nameobj = data_to_fill.get(field_key)
+
+                for kid_info in field_detail['kids']: 
+                    option_descriptive_name = str(kid_info.get('name', 'Unknown Option'))
+                    option_export_value_str = str(kid_info.get('export_value', '')) 
+                    
+                    options_for_ui.append({
+                        'name': option_descriptive_name,
+                        'value': option_export_value_str 
+                    })
+                    
+                    if selected_kid_on_state_nameobj and isinstance(selected_kid_on_state_nameobj, NameObject) and selected_kid_on_state_nameobj == NameObject(option_export_value_str):
+                        intended_selected_option_export_value = option_export_value_str
+                
+                temp_radio_groups.append({
+                    'name': group_descriptive_name, # This is the /T of the radio group field itself
+                    'key': field_key, # The PDF key for the radio group
+                    'options': options_for_ui,
+                    'selected_value': intended_selected_option_export_value # The export value of the selected option, or null
+                })
+        ui_response_data['radio_groups'] = temp_radio_groups
+        
+        # Update mapped_field_count to reflect actual mapped data, not just length of all_mapped_fields
+        # Count items in data_to_fill that were actually present in all_pdf_fields_info
+        actually_mapped_count = 0
+        for k_mapped in data_to_fill:
+            if k_mapped in all_pdf_fields_info:
+                 actually_mapped_count +=1
+        ui_response_data['mapped_field_count'] = actually_mapped_count
+
+        # At this point, ui_response_data is populated with all displayable field info.
+        # Now, check if we should attempt the actual PDF filling.
+        
+        should_perform_fill = request_data.get('perform_fill', True) # Get 'perform_fill' flag from request_data
+        logger.info(f"PDF Generation: 'perform_fill' flag is set to {should_perform_fill}.")
+
+        if should_perform_fill:
+            logger.info(f"Attempting to fill PDF with {len(data_to_fill)} mapped fields into {output_path}")
+            try:
+                # ADDITIONAL DEBUGGING: Log all checkbox and radio button values
+                logger.info("DEBUG: Checkbox and radio button values being sent to processor.fill_pdf_form:")
+                checkbox_count = 0
+                radio_count = 0
+                
+                # Improved preprocessing for checkboxes and radio buttons
+                processed_button_fields = {}
+                for key, value in data_to_fill.items():
+                    if key in processor.fields:
+                        field_obj = processor.fields[key]
+                        field_type = field_obj.get('/FT')
+                        kids = field_obj.get('/Kids')
+                        
+                        if field_type == NameObject('/Btn'):
+                            # For checkboxes (no kids)
+                            if not kids:
+                                # Ensure checkboxes are boolean values
+                                if isinstance(value, bool):
+                                    processed_button_fields[key] = value
+                                elif isinstance(value, str):
+                                    processed_button_fields[key] = value.lower() in ["yes", "true", "on", "1", "y"]
+                                elif isinstance(value, NameObject):
+                                    processed_button_fields[key] = str(value) != '/Off'
+                                else:
+                                    processed_button_fields[key] = False
+                                
+                                logger.info(f"Preprocessed checkbox {key}: {value} → {processed_button_fields[key]} (boolean)")
+                            
+                            # For radio buttons (with kids)
+                            elif kids:
+                                # Ensure radio button values are NameObject values with leading slash
+                                if isinstance(value, NameObject):
+                                    processed_button_fields[key] = value
+                                elif isinstance(value, str):
+                                    if not value.startswith('/'):
+                                        processed_button_fields[key] = NameObject(f"/{value}")
+                                    else:
+                                        processed_button_fields[key] = NameObject(value)
+                                    
+                                    logger.info(f"Preprocessed radio button {key}: {value} → {processed_button_fields[key]} (NameObject)")
+                
+                # Update data_to_fill with processed button values
+                data_to_fill.update(processed_button_fields)
+                logger.info(f"Updated {len(processed_button_fields)} button fields with correct types")
+                
+                # This is where the PDF file is actually written
+                filled_pdf_actual_path = processor.fill_pdf_form(data_to_fill, output_path) 
+                
+                # VERIFY THE FILLED PDF
+                logger.info(f"Verifying filled PDF at: {filled_pdf_actual_path}")
+                try:
+                    from pypdf import PdfReader
+                    verification_reader = PdfReader(filled_pdf_actual_path)
+                    logger.info(f"Verification: PDF has {len(verification_reader.pages)} pages and contains {len(verification_reader.get_fields() or {})} form fields")
+                except Exception as verify_err:
+                    logger.error(f"Verification error: {verify_err}")
+                
+                # Make sure the URL starts with /media/ to match Django's MEDIA_URL setting
+                pdf_url = f"/media/pdf/output/{output_filename}"
+                ui_response_data['pdf_generation_status'] = 'success'
+                ui_response_data['message'] = 'PDF generated successfully. Field data below shows mapped values.'
+                ui_response_data['pdf_url'] = pdf_url
+                ui_response_data['filled_pdf_path_ref'] = filled_pdf_actual_path
+                logger.info(f"PDF filled successfully and saved to {filled_pdf_actual_path}")
+
+            except Exception as pdf_fill_error:
+                logger.error(f"Error during PDF file generation stage: {str(pdf_fill_error)}")
+                logger.error(traceback.format_exc())
+                ui_response_data['pdf_generation_status'] = 'failed'
+                ui_response_data['message'] = f"Field data mapping processed. However, PDF file generation failed: {str(pdf_fill_error)}"
+                # filled_pdf_path_ref remains None
+        else:
+            logger.info("PDF filling was deferred based on 'perform_fill' flag.")
+            ui_response_data['pdf_generation_status'] = 'deferred'
+            ui_response_data['message'] = 'Data processed and mapped for display. PDF generation was not requested.'
+            ui_response_data['pdf_url'] = None
+            ui_response_data['filled_pdf_path_ref'] = None
+
+
+        # Log the detailed ui_response_data before returning
+        try:
+            logger.info("--- DETAILED UI RESPONSE DATA (fill_pdf_form) ---")
+            logger.info(json.dumps(ui_response_data, indent=2, default=str)) # Use default=str for any non-serializable objects like NameObject if they sneak in
+            logger.info("--- END DETAILED UI RESPONSE DATA ---")
+        except Exception as log_e:
+            logger.error(f"Error logging ui_response_data: {log_e}")
+
+        return {
+            'filled_pdf_path': ui_response_data['filled_pdf_path_ref'], # This is the actual path if successful, else None
+            'response_data': ui_response_data
         }
         
-        # Create a dictionary from extracted_fields for easier lookup by llm_field_name
-        llm_data_dict = {f["field_name"]: f for f in extracted_fields if f.get("field_value") is not None and f.get("confidence_score",0) >=0.1}
-
-        concatenated_values = {}
-
-        for pdf_target_key, config in multipart_field_config.items():
-            value_parts = []
-            any_part_present = False
-            highest_confidence = 0.0
-            for part_llm_name in config["parts"]:
-                if part_llm_name in llm_data_dict:
-                    field_part_obj = llm_data_dict[part_llm_name]
-                    value_parts.append(str(field_part_obj["field_value"]))
-                    any_part_present = True
-                    highest_confidence = max(highest_confidence, field_part_obj.get("confidence_score", 0))
-                    del llm_data_dict[part_llm_name] # Remove from dict to avoid reprocessing
-                else:
-                    # Add empty string if a middle part is missing to maintain order if separator matters
-                    # For names/addresses, usually just skip missing middle parts.
-                    pass 
-            
-            if any_part_present:
-                concatenated_values[pdf_target_key] = {
-                    "field_value": config["separator"].join(filter(None, value_parts)),
-                    "confidence_score": highest_confidence, # Use highest confidence of parts
-                    # The 'field_name' for mapping purposes should be the conceptual group name if it exists in map
-                    # or one of its parts if the group name itself isn't directly mapped.
-                    # This depends on how LLM_TO_PDF_FIELD_MAP is structured for these.
-                    # For now, we assume pdf_target_key is the one used in field_mapping (e.g. "Borrower Name")
-                    "original_llm_group": pdf_target_key 
-                }
-
-        # Add remaining single fields
-        for llm_field_name, field_obj in llm_data_dict.items():
-            single_fields.append(field_obj)
-        
-        # Combine concatenated and single fields for data preparation
-        # The `field_data` preparation loop will use these.
-        # `concatenated_values` items need to be transformed slightly to match `extracted_fields` items
-        
-        final_fields_for_pdf = single_fields
-        for mapped_pdf_key, data in concatenated_values.items():
-            # We need to find an appropriate LLM field name that maps to this mapped_pdf_key
-            # or assume mapped_pdf_key can be used if it's in field_mapping.
-            # This is tricky. Let's assume the 'original_llm_group' name is what should be used
-            # for mapping lookups if it exists in field_mapping.
-            # Otherwise, the mapping for concatenated fields is complex.
-            
-            # For simplicity, we'll pass the concatenated value using the PDF target key directly.
-            # The `field_data` loop needs to be aware of this.
-            # This means the field_mapping should map "Borrower Name" (the group) to the PDF field.
-            final_fields_for_pdf.append({
-                "field_name": data["original_llm_group"], # This must be a key in field_mapping
-                "field_value": data["field_value"],
-                "confidence_score": data["confidence_score"]
-            })
-
-        # --- Original field_data preparation loop (slightly modified) ---
-        field_data = {}
-        
-        for field in final_fields_for_pdf: # Iterate over potentially concatenated fields
-            # field_value can be None if confidence was too low or 'Not Found'
-            if field.get('field_value') is None: # Check added in previous edit, keep it
-                 logger.info(f"Skipping field \'{field.get('field_name')}\' due to None value before processing.")
-                 continue
-
-            llm_field_name = field['field_name']
-            original_field_value = field['field_value'] # This is now potentially a concatenated string or original value
-
-            pdf_field_target_name = field_mapping.get(llm_field_name)
-            
-            # The legacy_get_pdf_field_name fallback is less critical if map_fields is robust
-            # but can be kept as a last resort if field_mapping might still miss something.
-            if not pdf_field_target_name and llm_field_name not in multipart_field_config: # Avoid legacy for groups already handled
-                 pdf_field_target_name = legacy_get_pdf_field_name(llm_field_name)
-                 if pdf_field_target_name:
-                      logger.warning(f"Field \'{llm_field_name}\' used legacy mapping directly. Consider updating primary mappings.")
-            
-            if not pdf_field_target_name:
-                logger.warning(f"No PDF mapping found for LLM field: {llm_field_name} after all mapping attempts. Skipping.")
-                continue
-
-            value_to_set = original_field_value # Start with the (potentially concatenated) value
-
-            # Handle \"Group: Value\" convention from LLM field names for radio/choice buttons
-            # This logic applies if llm_field_name itself contains \": \", e.g. "Mortgage Type: Conventional"
-            # For concatenated fields, llm_field_name is the group name (e.g. "Borrower Name"), so this won't apply to them.
-            if ": " in llm_field_name and not field.get("original_llm_group"): # Check it's not a pre-concatenated field
-                parts = llm_field_name.split(": ", 1)
-                if len(parts) == 2:
-                    # original_field_value for these choice fields is expected to be 'Yes' or True from test script
-                    if original_field_value in [True, 'True', 'true', 'Yes', 'yes', 'On', 'on']:
-                         value_to_set = parts[1].strip() # e.g., "VA"
-                    else:
-                        logger.info(f"LLM choice field \'{llm_field_name}\' has falsy value \'{original_field_value}\', not setting option \'{parts[1].strip()}\'.")
-                        continue 
-            elif llm_field_name not in multipart_field_config: # Apply boolean conversion only to non-group, non-choice fields
-                if original_field_value is True:
-                    value_to_set = "Yes"
-                elif original_field_value is False:
-                    logger.info(f"LLM field \'{llm_field_name}\' is False, not setting PDF field \'{pdf_field_target_name}\'.")
-                    continue
-            
-            if value_to_set is not None:
-                field_data[pdf_field_target_name] = value_to_set
-                logger.info(f"Prepared PDF field: \'{pdf_field_target_name}\' with value: \'{value_to_set}\' (from LLM field: \'{llm_field_name}\')")
-            else:
-                logger.warning(f"Value for LLM field \'{llm_field_name}\' became None after processing, not setting PDF field \'{pdf_field_target_name}\'.")
-
-        if not field_data:
-            logger.warning("No data prepared for PDF filling after mapping. Extracted fields might be empty or not mappable.")
-            # Depending on requirements, this could be an error or an allowed state (e.g., return empty PDF)
-            # For now, let it proceed, as an empty field_data might be valid if no relevant fields were extracted.
-            # If an empty filled PDF is an error, raise PDFFillError here.
-
-        # Create a temporary file path for the output
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as temp_file:
-            output_path = temp_file.name
-        
-        # Use the enhanced PDF filler to fill the form
-        # Removed the fallback to basic PDF filling. If this fails, an error will be raised.
-        filler = PDFFiller(PDF_TEMPLATE_PATH)
-        filled_pdf_path = filler.fill_form(
-            field_data,
-            output_path
-        )
-        
-        # Log successful filling
-        logger.info(f"Successfully filled PDF with {len(field_data)} fields at {filled_pdf_path}")
-        return filled_pdf_path
-            
+    except PDFFillError as pfe: # Errors from pre-requisites like no data, or from processor methods before actual fill
+        logger.error(f"PDFFillError occurred: {str(pfe)}")
+        logger.error(traceback.format_exc())
+        ui_response_data['pdf_generation_status'] = 'failed'
+        ui_response_data['message'] = f"Error preparing data for PDF: {str(pfe)}"
+        # Ensure mapped_field_count is based on the data_to_fill state at this point
+        ui_response_data['mapped_field_count'] = len(data_to_fill) 
+        return {
+            'filled_pdf_path': None,
+            'response_data': ui_response_data
+        }
     except Exception as e:
-        # Catch any exception during the process (including from PDFFiller or mapping)
-        # and wrap it in PDFFillError
-        logger.error(f"Error during PDF filling process: {str(e)}", exc_info=True)
-        # If it's already a PDFFillError, re-raise it directly
-        if isinstance(e, PDFFillError):
-            raise
-        # Otherwise, wrap it
-        raise PDFFillError(f"PDF filling failed: {str(e)}") 
+        logger.error(f"Unexpected error in fill_pdf_form service: {str(e)}")
+        logger.error(traceback.format_exc())
+        # Populate a default error response if ui_response_data wasn't fully formed
+        error_response = {
+            'pdf_generation_status': 'failed',
+            'message': f"An unexpected error occurred: {str(e)}",
+            'pdf_url': None,
+            'filled_pdf_path_ref': None,
+            'mapped_field_count': len(data_to_fill), # data_to_fill might have some content
+            'all_mapped_fields': [],
+            'checkbox_fields': [],
+            'radio_groups': []
+        }
+        # Try to merge any partially populated ui_response_data with defaults
+        final_error_response = {**error_response, **ui_response_data} 
+        final_error_response['message'] = error_response['message'] # Ensure the most recent error message is used
+        final_error_response['pdf_generation_status'] = 'failed'
+
+        # Log the detailed final_error_response before returning in case of unexpected error
+        try:
+            logger.info("--- DETAILED UI ERROR RESPONSE DATA (fill_pdf_form unexpected error) ---")
+            logger.info(json.dumps(final_error_response, indent=2, default=str))
+            logger.info("--- END DETAILED UI ERROR RESPONSE DATA ---")
+        except Exception as log_e:
+            logger.error(f"Error logging final_error_response: {log_e}")
+
+        return {
+            'filled_pdf_path': None,
+            'response_data': final_error_response
+        } 

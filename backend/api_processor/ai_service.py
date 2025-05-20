@@ -14,48 +14,65 @@ LM_STUDIO_URL = "http://localhost:1234/v1/chat/completions"
 
 # System prompt for the AI model
 SYSTEM_PROMPT = """
-You are an expert data extraction AI. Your task is to analyze a provided call transcript related to a mortgage application (1003 Form) and extract specific fields.
+Extract mortgage application fields from transcript:
 
-The fields to extract are:
-1.  **Borrower First Name**
-2.  **Borrower Middle Name**
-3.  **Borrower Last Name**
-4.  **Borrower Suffix**
-5.  **Social Security Number**
-6.  **Date of Birth** (YYYY-MM-DD format if possible, otherwise as stated)
-7.  **Current Street Address**
-8.  **Current City**
-9.  **Current State** (2-letter abbreviation if possible)
-10. **Current Zip Code**
-11. **Primary Phone Number**
-12. **Email Address**
-13. **Marital Status** (e.g., Married, Unmarried, Separated)
-14. **Current Employer Name**
-15. **Job Title/Position**
-16. **Employment Start Date**
-17. **Monthly Income (Base)**
-18. **Monthly Income (Other, specify source if possible)**
-19. **Loan Amount Requested**
-20. **Loan Purpose** (e.g., Purchase, Refinance)
-21. **Property Street Address (if different from current, or for purchase)**
-22. **Property City (if different from current, or for purchase)**
-23. **Property State (if different from current, or for purchase)**
-24. **Property Zip Code (if different from current, or for purchase)**
+RULES:
+1. Use ONLY the EXACT field names listed below
+2. Only extract mentioned fields
+3. Format: dates (MM/DD/YYYY), phone (xxx-xxx-xxxx), SSN (xxx-xx-xxxx)
+4. For checkbox fields: "Yes" or "No" only
+5. For radio button fields: Use EXACT values specified in parentheses
 
-For each field you identify:
-* Provide the extracted "field_value".
-* Provide a "confidence_score" between 0.0 (no confidence/not found) and 1.0 (very high confidence). If a field is not mentioned or clearly identifiable in the transcript, use a low confidence score (e.g., 0.0 or 0.1) and the field_value can be null, an empty string, or "Not Found".
+FIELDS TO EXTRACT:
 
-**VERY IMPORTANT: Respond ONLY with a valid JSON object.** The JSON object should have a single key "fields", which is an array of objects. Each object in the array must have three keys: "field_name" (exactly as listed above), "field_value", and "confidence_score".
+## TEXT FIELDS
+- Borrower Name
+- Borrower SSN
+- Borrower DOB
+- Borrower Home Phone
+- Borrower Present Address
+- Borrower Position/Title/Type of Business
+- Borrower Name and Address of Employer
+- Borrower Years on the job
+- Amount
+- Interest Rate
+- Subject Property Address
+- Subject Property Description
+- Year Built
 
-Example of the expected JSON structure for a single field:
+## CHECKBOX FIELDS (answer with "Yes" or "No" only)
+- First Time Homebuyer
+- Property will be Primary Residence
+- Property will be Second Home
+- Property will be Investment
+- Mortgage is Conventional
+- Borrower Self Employed
+- Borrower has Dependents
+- Borrower is US Citizen
+- Co-Borrower is US Citizen
+- Borrower Intends to Occupy Property
+- This is Construction Loan
+- This is Refinance
+- Co-Borrower will be using income
+
+## RADIO BUTTON FIELDS (use EXACT values in parentheses)
+- Purpose of Loan (Purchase, Refinance, Construction, Construction-Permanent, Other)
+- Property Usage (Primary Residence, Secondary Residence, Investment Property)
+- Mortgage Type (Conventional, FHA, VA, USDA/Rural Housing Service, Other)
+- Marital Status (Married, Unmarried, Separated)
+- Borrower Own/Rent (Own, Rent)
+
+FORMAT:
 {
-  "field_name": "Borrower First Name",
-  "field_value": "John",
-  "confidence_score": 0.95
+  "fields": [
+    {"n": 1, "name": "Borrower Name", "value": "John Smith", "conf": 95},
+    {"n": 2, "name": "Amount", "value": "350000", "conf": 90},
+    {"n": 3, "name": "First Time Homebuyer", "value": "Yes", "conf": 85},
+    {"n": 4, "name": "Purpose of Loan", "value": "Purchase", "conf": 98}
+  ]
 }
 
-Do not include any explanations, apologies, or introductory/closing text outside of the JSON object itself.
+Remember: Use ONLY the exact field names listed, and the exact values for radio buttons.
 """
 
 
@@ -133,7 +150,7 @@ def extract_fields_from_transcript(transcript):
                 {"role": "user", "content": transcript}
             ],
             "temperature": 0.1,  # Low temperature for factual extraction
-            "max_tokens": 2000,  # Adjust as needed for expected JSON output size
+            "max_tokens": 4000,  # Increased from 2000 to 4000 to allow for longer responses
         }
         
         headers = {
@@ -145,7 +162,7 @@ def extract_fields_from_transcript(transcript):
             LM_STUDIO_URL, 
             headers=headers, 
             json=payload,
-            timeout=120  # Increased timeout to 120 seconds (2 minutes)
+            timeout=180  # Increased timeout to 3 minutes (180 seconds)
         )
         
         # Check if request was successful
@@ -171,18 +188,27 @@ def extract_fields_from_transcript(transcript):
             if not isinstance(extracted_data, dict) or 'fields' not in extracted_data:
                 raise AIExtractionError("AI response doesn't have the expected 'fields' key")
                 
-            # Validate each field has the required structure
+            # Convert the compact numbered format to the expected structure
+            reformatted_fields = []
             for field in extracted_data['fields']:
-                if not all(key in field for key in ('field_name', 'field_value', 'confidence_score')):
-                    raise AIExtractionError("Field is missing required keys")
-                    
-                # Ensure confidence_score is a float between 0 and 1
-                if not isinstance(field['confidence_score'], (int, float)) or not 0 <= field['confidence_score'] <= 1:
-                    field['confidence_score'] = float(field['confidence_score']) if isinstance(field['confidence_score'], (str, int)) else 0.0
-                    if not 0 <= field['confidence_score'] <= 1:
-                        field['confidence_score'] = max(0.0, min(1.0, field['confidence_score']))
+                # Handle compact numbering format conversion
+                if 'n' in field and 'name' in field and 'value' in field and 'conf' in field:
+                    reformatted_fields.append({
+                        'field_name': field['name'],
+                        'field_value': field['value'],
+                        'confidence_score': field['conf'] / 100.0  # Convert 0-100 to 0-1
+                    })
+                # Handle legacy format
+                elif 'field_name' in field and ('field_value' in field or 'value' in field) and ('confidence_score' in field or 'confidence' in field):
+                    value = field.get('field_value', field.get('value', ''))
+                    confidence = field.get('confidence_score', field.get('confidence', 0))
+                    reformatted_fields.append({
+                        'field_name': field['field_name'],
+                        'field_value': value,
+                        'confidence_score': confidence if confidence <= 1 else confidence / 100.0
+                    })
             
-            return extracted_data
+            return {'fields': reformatted_fields}
             
         except json.JSONDecodeError as e:
             logger.error(f"Failed to parse AI response as JSON: {extracted_text}")

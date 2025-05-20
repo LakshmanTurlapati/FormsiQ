@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     print("--- FINAL REVIEW GATE ACTIVE ---", flush=True)
     print("AI has completed its primary actions. Awaiting your review or further sub-prompts.", flush=True)
-    print("Type your sub-prompt, or 'TASK_COMPLETE', 'Done', 'Quit', 'q', or press Enter to allow AI to conclude.", flush=True)
+    print("Type your sub-prompt, or one of: 'TASK_COMPLETE', 'Done', 'Quit', 'q' to signal completion.", flush=True) # MODIFIED
     
     active_session = True
     while active_session:
@@ -37,18 +37,15 @@ if __name__ == "__main__":
             user_input = line.strip()
 
             # Check for exit conditions
-            if user_input.upper() in ['TASK_COMPLETE', 'DONE', 'QUIT', 'Q'] or user_input == "": # Modified exit condition
-                if user_input == "":
-                    print("--- REVIEW GATE: EMPTY INPUT RECEIVED, TASK CONSIDERED COMPLETE ---", flush=True)
-                else:
-                    print(f"--- REVIEW GATE: USER SIGNALED COMPLETION WITH '{user_input.upper()}' ---", flush=True)
+            if user_input.upper() in ['TASK_COMPLETE', 'DONE', 'QUIT', 'Q']: # MODIFIED: Empty string no longer exits
+                print(f"--- REVIEW GATE: USER SIGNALED COMPLETION WITH '{user_input.upper()}' ---", flush=True)
                 active_session = False
                 break
-            elif user_input: # If there's any other input
+            elif user_input: # If there's any other non-empty input (and not a completion command)
                 # This is the critical line the AI will "listen" for.
                 print(f"USER_REVIEW_SUB_PROMPT: {user_input}", flush=True)
-            # If the input is just an empty line (and not caught by the updated exit condition), 
-            # the loop continues, waiting for actual input.
+            # If user_input was empty (and not a completion command),
+            # the loop simply continues, and "REVIEW_GATE_AWAITING_INPUT:" will be printed again.
             
         except KeyboardInterrupt:
             print("--- REVIEW GATE: SESSION INTERRUPTED BY USER (KeyboardInterrupt) ---", flush=True)
