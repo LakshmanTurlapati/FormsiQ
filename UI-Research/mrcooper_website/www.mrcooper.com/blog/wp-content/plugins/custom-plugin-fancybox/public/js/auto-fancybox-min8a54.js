@@ -1,1 +1,0 @@
-!function(a){a('a[href*=".png"], a[href*=".gif"], a[href*=".jpg"], a[href*=".jpeg"], a[href*="youtube.com"], a[href*="youtu.be/"], a[href*="vimeo.com"], a[href*="google.com/maps"]').not(".custom-plugin-fancybox-no-modal").each(function(){a(this).attr("data-fancybox","")})}(jQuery);
