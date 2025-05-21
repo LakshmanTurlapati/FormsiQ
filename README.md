@@ -8,7 +8,7 @@ The application consists of three main components:
 
 1. **Frontend UI (Angular)**: Provides an interface for users to paste call transcripts and view/download extracted form data
 2. **Backend API (Django)**: Processes transcripts and handles PDF form filling
-3. **AI Language Model (Gemma via LM Studio)**: Performs the extraction of relevant fields from transcripts
+3. **AI Language Model (Gemma via LM Studio & Grok 3 )**: Performs the extraction of relevant fields from transcripts
 
 ## Features
 
@@ -16,7 +16,7 @@ The application consists of three main components:
 - AI-powered extraction of relevant mortgage application data
 - View extracted fields with confidence scores
 - Download a filled PDF form with the extracted data
-- Responsive UI that works on desktop and mobile devices
+- Responsive UI
 
 ## Prerequisites
 
@@ -110,6 +110,3 @@ FormsIQ/
     └── ...
 ```
 
-## License
-
-Copyright © 2023 FormsIQ
