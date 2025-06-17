@@ -1,0 +1,256 @@
+<div class="results-container" *ngIf="extractedData || (pdfResult && (textFieldsForDisplay.length > 0 || checkboxFieldsForDisplay.length > 0 || radioGroupsForDisplay.length > 0))">
+  <div class="results-header">
+    <h2>Extracted Mortgage Application Data</h2>
+    <p *ngIf="isProcessingFields" class="processing-message">
+      <svg class="spinner" viewBox="0 0 50 50">
+        <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+      </svg>
+      Processing extracted fields and loading all PDF placeholders...
+    </p>
+    <p *ngIf="!isProcessingFields && uiMessage" 
+       [ngClass]="{'error-message': pdfResult?.pdf_generation_status === 'failed', 
+                   'info-message': pdfResult?.pdf_generation_status !== 'failed' && pdfResult?.pdf_generation_status !== 'success', 
+                   'success-message': pdfResult?.pdf_generation_status === 'success' && !pdfGenerationInProgress}">
+      <svg *ngIf="pdfResult?.pdf_generation_status === 'success'" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#4caf50">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+      </svg>
+      <svg *ngIf="pdfResult?.pdf_generation_status === 'failed'" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#f44336">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+      </svg>
+      {{ uiMessage }}
+    </p>
+  </div>
+  
+  <div class="actions">
+    <button 
+      (click)="generateAndDownloadPdf()" 
+      [disabled]="pdfGenerationInProgress || isProcessingFields || !extractedData?.fields?.length" 
+      class="primary-btn pdf-download-btn"
+    >
+      <svg *ngIf="!pdfGenerationInProgress" xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#ffffff">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+      </svg>
+      <span *ngIf="!pdfGenerationInProgress">Download Filled PDF</span>
+      <span *ngIf="pdfGenerationInProgress" class="loading-text">
+        Downloading...
+      </span>
+    </button>
+    
+    <!-- Toggle button for showing all fields -->
+    <button 
+      (click)="toggleShowAllFields()" 
+      class="secondary-btn toggle-btn"
+      [class.active]="showAllFields"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/>
+      </svg>
+      <span>{{ showAllFields ? 'Show Mapped Fields Only' : 'Show All Fields' }}</span>
+    </button>
+  </div>
+  
+  <div *ngIf="pdfResult && pdfResult.pdf_generation_status === 'success' && pdfResult.pdf_url" class="pdf-preview">
+    <a [href]="pdfResult.pdf_url" target="_blank" class="view-pdf-link">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#004261">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+      </svg>
+      View Generated PDF
+    </a>
+  </div>
+  
+  <div class="field-type-nav" *ngIf="(filteredTextFields && filteredTextFields.length > 0) || (filteredCheckboxFields && filteredCheckboxFields.length > 0) || (filteredRadioGroups && filteredRadioGroups.length > 0)">
+    <button (click)="selectTab('text')" [class.active]="activeTab === 'text'">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+      </svg>
+      Text Fields ({{filteredTextFields.length || 0}}/{{textFieldsForDisplay.length || 0}})
+    </button>
+    <button (click)="selectTab('checkboxes')" [class.active]="activeTab === 'checkboxes'">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+      </svg>
+      Checkboxes ({{filteredCheckboxFields.length || 0}}/{{checkboxFieldsForDisplay.length || 0}})
+    </button>
+    <button (click)="selectTab('radio')" [class.active]="activeTab === 'radio'">
+      <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="currentColor">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+      </svg>
+      Radio Buttons ({{filteredRadioGroups.length || 0}}/{{radioGroupsForDisplay.length || 0}})
+    </button>
+  </div>
+  
+  <!-- Text Fields Section -->
+  <div *ngIf="activeTab === 'text'" class="fields-section">
+    <h3>Text Fields</h3>
+    <div *ngIf="filteredTextFields && filteredTextFields.length > 0; else noTextFieldsOrLoading" class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>PDF Placeholder Name</th>
+            <th>Value from AI (or Status)</th>
+            <th>Confidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let field of filteredTextFields">
+            <td>{{ field.name }}</td>
+            <td [class.not-found]="field.value === FIELD_NOT_MAPPED_VALUE">
+              {{ field.value === FIELD_NOT_MAPPED_VALUE ? 'Not Found in AI Output' : field.value }}
+            </td>
+            <td>
+              <ng-container *ngIf="field.value !== FIELD_NOT_MAPPED_VALUE && field.confidence_score !== undefined">
+                <div class="confidence-indicator" 
+                     [ngClass]="{'high': field.confidence_score >= 0.7, 
+                                'medium': field.confidence_score >= 0.4 && field.confidence_score < 0.7,
+                                'low': field.confidence_score < 0.4}">
+                  {{ (field.confidence_score * 100).toFixed(0) }}%
+                </div>
+              </ng-container>
+              <span *ngIf="field.value === FIELD_NOT_MAPPED_VALUE">N/A</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <!-- Empty state for when filtering results in no fields -->
+      <div *ngIf="filteredTextFields.length === 0 && textFieldsForDisplay.length > 0" class="no-mapped-fields">
+        <p>No mapped text fields found. <a (click)="toggleShowAllFields()" class="show-all-link">Show all fields</a> to see all available PDF placeholders.</p>
+      </div>
+    </div>
+    <ng-template #noTextFieldsOrLoading>
+      <p class="no-data" *ngIf="!isProcessingFields">No text fields found in the PDF template or an error occurred.</p>
+    </ng-template>
+  </div>
+  
+  <!-- Checkbox Fields Section -->
+  <div *ngIf="activeTab === 'checkboxes'" class="fields-section">
+    <h3>Checkbox Fields</h3>
+    <div *ngIf="filteredCheckboxFields && filteredCheckboxFields.length > 0; else noCheckboxesOrLoading" class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>PDF Placeholder Name</th>
+            <th>Status</th>
+            <th>PDF 'On' Value</th>
+            <th>PDF Field Key</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let checkbox of filteredCheckboxFields">
+            <td>{{ checkbox.name }}</td>
+            <td [ngClass]="checkbox.checked ? 'checkbox-cell checkbox-checked' : 'checkbox-cell checkbox-unchecked'">
+              <span *ngIf="checkbox.checked">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#4caf50">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+                CHECKED
+              </span>
+              <span *ngIf="!checkbox.checked">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#999999">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
+                </svg>
+                Not checked
+              </span>
+            </td>
+            <td>{{ checkbox.on_value_in_pdf }}</td>
+            <td>{{ checkbox.key }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <!-- Empty state for when filtering results in no checkboxes -->
+      <div *ngIf="filteredCheckboxFields.length === 0 && checkboxFieldsForDisplay.length > 0" class="no-mapped-fields">
+        <p>No checked checkboxes found. <a (click)="toggleShowAllFields()" class="show-all-link">Show all fields</a> to see all available checkbox fields.</p>
+      </div>
+    </div>
+    <ng-template #noCheckboxesOrLoading>
+      <div *ngIf="isProcessingFields; else noCheckboxes" class="loading-message">
+        <svg class="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+        Loading checkbox fields...
+      </div>
+      <ng-template #noCheckboxes>
+        <div class="no-data-message">
+          No checkbox fields found in the PDF form or no checkbox values extracted from the AI.
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+  
+  <!-- Radio Buttons Section -->
+  <div *ngIf="activeTab === 'radio'" class="fields-section">
+    <h3>Radio Button Groups</h3>
+    <div *ngIf="filteredRadioGroups && filteredRadioGroups.length > 0; else noRadioGroupsOrLoading" class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Radio Group Name</th>
+            <th>Selected Option</th>
+            <th>All Options</th>
+            <th>PDF Field Key</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let radioGroup of filteredRadioGroups">
+            <td>{{ radioGroup.name }}</td>
+            <td [ngClass]="radioGroup.selected_value ? 'radio-cell radio-selected' : 'radio-cell radio-not-selected'">
+              <span *ngIf="radioGroup.selected_value">
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" width="20" fill="#1b6c92">
+                  <path d="M0 0h24v24H0z" fill="none"/>
+                  <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0-5C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+                </svg>
+                {{ radioGroup.selected_value }}
+              </span>
+              <span *ngIf="!radioGroup.selected_value">None selected</span>
+            </td>
+            <td>
+              <div *ngFor="let option of radioGroup.options" 
+                   [ngClass]="option.value === radioGroup.selected_value ? 'option-selected' : ''">
+                {{ option.name }} ({{ option.value }})
+              </div>
+            </td>
+            <td>{{ radioGroup.key }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <!-- Empty state for when filtering results in no radio groups -->
+      <div *ngIf="filteredRadioGroups.length === 0 && radioGroupsForDisplay.length > 0" class="no-mapped-fields">
+        <p>No selected radio buttons found. <a (click)="toggleShowAllFields()" class="show-all-link">Show all fields</a> to see all available radio button groups.</p>
+      </div>
+    </div>
+    <ng-template #noRadioGroupsOrLoading>
+      <div *ngIf="isProcessingFields; else noRadioGroups" class="loading-message">
+        <svg class="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+        Loading radio button groups...
+      </div>
+      <ng-template #noRadioGroups>
+        <div class="no-data-message">
+          No radio button groups found in the PDF form or no radio button values extracted from the AI.
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+</div>
+
+<div class="empty-state" *ngIf="!extractedData && !isProcessingFields && (!pdfResult || (textFieldsForDisplay.length === 0 && checkboxFieldsForDisplay.length === 0 && radioGroupsForDisplay.length === 0))">
+  <svg xmlns="http://www.w3.org/2000/svg" height="64" viewBox="0 0 24 24" width="64" fill="#ccc">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm-1 7V3.5L18.5 9H13z"/>
+  </svg>
+  <p>No data processed yet</p>
+  <p class="subtext">Please submit a transcript to see extracted mortgage application data</p>
+</div>

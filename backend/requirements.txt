@@ -1,0 +1,19 @@
+# Core web framework
+django==5.2.1
+djangorestframework==3.16.0
+django-cors-headers==4.7.0
+
+# PDF processing
+pypdf==5.4.0
+
+# HTTP requests and API integration
+requests==2.32.3
+
+# Environment variable management
+python-dotenv==1.0.1
+
+# OpenAI API for Grok integration
+openai==1.54.3
+
+# Type hinting support for older Python versions
+typing-extensions>=4.8.0

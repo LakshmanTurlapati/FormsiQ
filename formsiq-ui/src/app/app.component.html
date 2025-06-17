@@ -1,0 +1,45 @@
+<app-splash-screen *ngIf="isLoading"></app-splash-screen>
+
+<div class="app-container" *ngIf="!isLoading">
+  <header class="main-header">
+    <div class="header-content">
+      <h1>FormsIQ</h1>
+      <p>Automated Mortgage Application Form Extraction</p>
+    </div>
+  </header>
+  
+  <div class="hero-banner">
+    <div class="hero-content">
+      <div class="hero-badge">New</div>
+      <h2 class="hero-title">Instantly Extract Mortgage Application Data</h2>
+      <p class="hero-description">Turn mortgage call <span>transcripts into completed forms</span> within seconds, saving hours of manual work.</p>
+      <div class="hero-buttons">
+        <a href="#processor" class="primary-action-btn">Process Transcript</a>
+        <button type="button" class="secondary-action-btn" (click)="openNoteModal()">Learn More</button>
+      </div>
+    </div>
+  </div>
+  
+  <main>
+    <div id="processor" class="content">
+      <app-transcript-input
+        (extractionComplete)="onExtractionComplete($event)"
+      ></app-transcript-input>
+      
+      <app-results-display
+        [extractedData]="extractedData"
+        *ngIf="extractedData"
+      ></app-results-display>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 FormsIQ - Call Transcript to Mortgage Form Extractor  <br>  By<strong> Venkat L. Turlpati</strong></p>
+  </footer>
+</div>
+
+<app-note-modal 
+  [content]="noteContent" 
+  [visible]="showNoteModal" 
+  (close)="closeNoteModal()"
+></app-note-modal>

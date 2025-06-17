@@ -1,0 +1,121 @@
+<div class="transcript-container">
+  <h2>Call Transcript Processor</h2>
+  <p class="subtitle">Paste the call transcript below or upload a transcript file to extract mortgage application information.</p>
+  
+  <div class="card-container">
+    <div class="file-upload-card">
+      <div class="card-header">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#004261">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+          </svg>
+        </div>
+        <h3>Upload Transcript File</h3>
+      </div>
+      <div class="card-content">
+        <p>Select a text file containing the call transcript</p>
+        <input 
+          type="file" 
+          id="transcript-file"
+          #transcriptFileInput
+          accept=".txt,.doc,.docx,.pdf"
+          (change)="onFileSelected($event)"
+          [disabled]="isLoading"
+          class="file-input"
+        >
+        <label for="transcript-file" class="file-upload-btn">
+          Choose File
+        </label>
+        <div *ngIf="acknowledgedFileName" class="selected-file">
+          <span class="file-info">
+            <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 0 24 24" width="18" fill="currentColor" class="file-icon">
+              <path d="M0 0h24v24H0z" fill="none"/>
+              <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+            </svg>
+            {{ acknowledgedFileName }} {{ acknowledgedFileSize }}
+          </span>
+          <button 
+            class="secondary-btn small-btn remove-file-btn" 
+            (click)="clearAcknowledgedFile()"
+            [disabled]="isLoading"
+            title="Remove selected file"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="or-divider">
+      <span>OR</span>
+    </div>
+    
+    <div class="text-input-card">
+      <div class="card-header">
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#004261">
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+          </svg>
+        </div>
+        <h3>Paste Transcript Text</h3>
+      </div>
+      <div class="card-content">
+        <p>Copy and paste the text from the call transcript</p>
+        <textarea 
+          [(ngModel)]="transcriptText" 
+          id="transcript-text"
+          placeholder="Paste call transcript here..." 
+          rows="8"
+          [disabled]="isLoading || (selectedFile !== null)"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+  
+  <div class="model-selection">
+    <label for="ai-model">AI Model:</label>
+    <select 
+      [(ngModel)]="selectedModel" 
+      id="ai-model"
+      [disabled]="isLoading"
+    >
+      <option *ngFor="let model of availableModels" [value]="model">
+        {{ model === 'gemma' ? 'Gemma 3' : 'Grok 3 Mini' }}
+      </option>
+    </select>
+  </div>
+  
+  <div class="button-group">
+    <button 
+      (click)="onSubmit()" 
+      [disabled]="isLoading || (!transcriptText.trim() && selectedFile === null)"
+      class="primary-btn"
+    >
+      <span *ngIf="!isLoading">Process Transcript</span>
+      <span *ngIf="isLoading" class="loading-text">
+        <svg class="spinner" viewBox="0 0 50 50">
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+        </svg>
+        Processing...
+      </span>
+    </button>
+    
+    <button 
+      (click)="clearTranscript()" 
+      [disabled]="isLoading || (!transcriptText.trim() && selectedFile === null)"
+      class="secondary-btn"
+    >
+      Clear
+    </button>
+  </div>
+  
+  <div *ngIf="errorMessage" class="error-message">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" fill="#f44336">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+    </svg>
+    {{ errorMessage }}
+  </div>
+</div>

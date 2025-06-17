@@ -1,0 +1,143 @@
+node_modules/
+.env
+**/.env
+*.pyc
+__pycache__/
+*.sqlite3
+*.log
+*.DS_Store
+backend/venv/
+frontend/dist/
+frontend/.angular/
+frontend/.sass-cache/
+UI-Research/
+
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Django specific
+*.log
+*.pot
+*.pyc
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media/
+
+# Angular/JavaScript specific
+node_modules/
+/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.angular/
+.sass-cache/
+
+# Environment files
+.env
+**/.env
+.venv
+env/
+venv/
+ENV/
+temp_venv/
+**/.env.*
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+._*
+
+# Project specific
+Experiment/
+api_processor/
+UI-Research/
+*_transcript.txt
+*_raw.txt
+extraction_results.json
+pdf_mapping_results.json
+pdf_fields.json
+pdf_fields.txt
+lmstudio_log.txt
+MFD.md
+debug_pdf_display.py
+temp_pdf_info_script.py
+test_*.py
+CLAUDE.md
+
+# Backend specific exclusions
+backend/**/*.md
+backend/**/test*.py
+
+# Deployment and sensitive files
+*SUMMARY.md
+**/deployment_configs/
+**/secrets/
+**/*credentials*
+**/*secrets*
+**/production_configs/
+aws/
+**/terraform.tfstate*
+**/ansible-vault*
+
+# Build and runtime artifacts
+frontend_build/
+**/dist/
+**/build/
+**/.next/
+**/coverage/
+**/.nyc_output/
+**/logs/
+**/*.log.*
+**/tmp/
+
+# Database and cache files
+**/*.db
+**/*.sqlite
+**/*.sqlite3-*
+**/redis_dump.rdb
+**/celerybeat-schedule*
+
+# Environment-specific configurations
+.env.local
+.env.development
+.env.test
+.env.production.local
+**/config.local.*
+**/settings.local.*
+
+# Keep specific files/folders
+!README.md
+!*/README.md
+!.env.example
+!**/.env.example

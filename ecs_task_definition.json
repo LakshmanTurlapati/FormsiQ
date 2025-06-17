@@ -1,0 +1,180 @@
+{
+    "family": "formsiq-beta",
+    "containerDefinitions": [
+        {
+            "name": "formsiq-backend",
+            "image": "120569631880.dkr.ecr.us-east-1.amazonaws.com/formsiq-backend",
+            "cpu": 0,
+            "memory": 4096,
+            "memoryReservation": 2048,
+            "portMappings": [
+                {
+                    "name": "formsiq-backend-8000-tcp",
+                    "containerPort": 8000,
+                    "hostPort": 8000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "DJANGO_SETTINGS_MODULE",
+                    "value": "formsiq_project.settings"
+                },
+                {
+                    "name": "PYTHONUNBUFFERED",
+                    "value": "1"
+                },
+                {
+                    "name": "GROK_API_URL",
+                    "value": "https://api.x.ai/v1/chat/completions"
+                },
+                {
+                    "name": "PYTHONDONTWRITEBYTECODE",
+                    "value": "1"
+                },
+                {
+                    "name": "ALLOWED_HOSTS",
+                    "value": "localhost,127.0.0.1,*.amazonaws.com,*.elb.amazonaws.com"
+                },
+                {
+                    "name": "DEBUG",
+                    "value": "False"
+                },
+                {
+                    "name": "CORS_ALLOWED_ORIGINS",
+                    "value": "https://*.amazonaws.com,https://*.elb.amazonaws.com"
+                },
+                {
+                    "name": "GUNICORN_CMD_ARGS",
+                    "value": "--timeout=300 --workers=2 --threads=4 --worker-tmp-dir=/dev/shm"
+                },
+                {
+                    "name": "LM_STUDIO_URL",
+                    "value": "http://localhost:1234/v1/chat/completions"
+                },
+                {
+                    "name": "S3_BUCKET_NAME",
+                    "value": "formsiq-pdfs"
+                },
+                {
+                    "name": "CLOUD_ENVIRONMENT",
+                    "value": "true"
+                },
+                {
+                    "name": "AWS_REGION",
+                    "value": "us-east-1"
+                }
+            ],
+            "secrets": [
+                {
+                    "name": "GROK_API_KEY",
+                    "valueFrom": "arn:aws:ssm:us-east-1:YOUR_ACCOUNT_ID:parameter/formsiq/GROK_API_KEY"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/formsiq-beta",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "backend"
+                },
+                "secretOptions": []
+            },
+            "healthCheck": {
+                "command": [
+                    "CMD",
+                    "echo", "Container is healthy"
+                ],
+                "interval": 30,
+                "timeout": 5,
+                "retries": 3,
+                "startPeriod": 60
+            },
+            "systemControls": []
+        },
+        {
+            "name": "formsiq-frontend",
+            "image": "120569631880.dkr.ecr.us-east-1.amazonaws.com/formsiq-frontend",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "formsiq-frontend-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "BACKEND_API_URL",
+                    "value": "http://localhost:8000"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "dependsOn": [
+                {
+                    "containerName": "formsiq-backend",
+                    "condition": "START"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/formsiq-beta",
+                    "awslogs-create-group": "true",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "frontend"
+                }
+            },
+            "healthCheck": {
+                "command": [
+                    "CMD",
+                    "echo", "Container is healthy"
+                ],
+                "interval": 30,
+                "timeout": 5,
+                "retries": 3,
+                "startPeriod": 30
+            },
+            "entryPoint": [
+                "sh",
+                "-c",
+                "echo '127.0.0.1 backend' >> /etc/hosts && exec /docker-entrypoint.sh nginx -g 'daemon off;'"
+            ],
+            "systemControls": []
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::120569631880:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::120569631880:role/ecsTaskRole",
+    "networkMode": "awsvpc",
+    "volumes": [],
+    "placementConstraints": [],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "1024",
+    "memory": "4096",
+    "runtimePlatform": {
+        "cpuArchitecture": "ARM64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "enableFaultInjection": false,
+    "tags": [
+        {
+            "key": "Beta",
+            "value": "FormsIQ"
+        }
+    ]
+}

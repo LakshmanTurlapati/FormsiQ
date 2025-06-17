@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: formsiq-backend
+    volumes:
+      - ./backend/media:/app/media
+      - ./backend/.env:/app/.env
+      # Make sure the media directory and its subdirectories exist and have correct permissions
+      - ./backend/api_processor/resources:/app/api_processor/resources
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env
+    environment:
+      - ALLOWED_HOSTS=localhost,127.0.0.1,backend
+      - CORS_ALLOWED_ORIGINS=http://localhost:4200,http://localhost:80,http://frontend:80,http://localhost,http://frontend
+      - MEDIA_URL=/media/
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    command: >
+      bash -c "mkdir -p /app/media/pdf/output /app/api_processor/resources && 
+      cp -n /app/api_processor/resources/uniform_residential_loan_application.pdf /app/media/pdf/ || echo 'PDF template already exists' && 
+      chmod -R 777 /app/media /app/api_processor/resources && 
+      python manage.py runserver 0.0.0.0:8000"
+
+  frontend:
+    build: ./formsiq-ui
+    container_name: formsiq-frontend
+    ports:
+      - "80:80"
+    environment:
+      - BACKEND_API_URL=http://backend:8000
+    depends_on:
+      - backend 
